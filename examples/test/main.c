@@ -10,7 +10,7 @@ int main()
 {
     At at;
     Stream dev;
-    At_Init(&at, _at_table, &dev, &dev, AT_PARAM_MAX_NUM, '\n', 200);
+    At_Init(&at, _at_table, &dev, &dev, 0);
     printf("_atTable:        %p\r\n", at._atTable);
     printf("_input_dev:      %p\r\n", at._input_dev);
     printf("_output_dev:     %p\r\n", at._output_dev);

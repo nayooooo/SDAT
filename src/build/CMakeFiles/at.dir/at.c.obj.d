@@ -21,4 +21,7 @@ CMakeFiles/at.dir/at.c.obj: D:\embedded\EmbeddedSoftware\SDAT\src\at.c \
  C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
  C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/malloc.h \
  C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/string.h \
- C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h
+ C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h \
+ C:/Users/YEWAN/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/stdarg.h \
+ C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/stdarg.h \
+ C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/_mingw_stdarg.h

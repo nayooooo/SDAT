@@ -4,6 +4,9 @@
 #include "at_type.h"
 #include "at_stream_device.h"
 
+#define AT_TERMINATOR_DEFAULT            ('\n')
+#define AT_READSTRING_LEN_DEFAULT        (200)
+
 struct At{
     At_State_t _atTable;
     Stream* _input_dev;
@@ -15,7 +18,15 @@ struct At{
 };
 typedef struct At At;
 
+// dangerous
 At_Err_t At_Init(
+    At* at,
+    const At_State_t atTable, Stream* input_dev, Stream* output_dev,
+    size_t argc, ...
+);
+
+// safer
+At_Err_t At_Init_s(
     At* at,
     const At_State_t atTable, Stream* input_dev, Stream* output_dev,
     size_t param_max_num, char terminator, size_t readString_len
