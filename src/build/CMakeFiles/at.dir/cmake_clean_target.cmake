@@ -1,3 +1,3 @@
 file(REMOVE_RECURSE
-  "D:/embedded/EmbeddedSoftware/SDAT/lib/libat.a"
+  "D:/embedded/EmbeddedSoftware/SDAT/lib/at.a"
 )

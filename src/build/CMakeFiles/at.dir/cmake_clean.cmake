@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/at.dir/at.c.obj"
   "CMakeFiles/at.dir/at.c.obj.d"
-  "D:/embedded/EmbeddedSoftware/SDAT/lib/libat.a"
-  "D:/embedded/EmbeddedSoftware/SDAT/lib/libat.pdb"
+  "D:/embedded/EmbeddedSoftware/SDAT/lib/at.a"
+  "D:/embedded/EmbeddedSoftware/SDAT/lib/at.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

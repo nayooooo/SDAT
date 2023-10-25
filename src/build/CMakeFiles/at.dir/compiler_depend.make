@@ -13,13 +13,7 @@ CMakeFiles/at.dir/at.c.obj: D:/embedded/EmbeddedSoftware/SDAT/src/at.c \
   C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_directx.h \
   C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
   C:/Users/YEWAN/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/stddef.h \
-  C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/stddef.h \
-  C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/stdio.h \
-  C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/_mingw_print_push.h \
-  C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
-  C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
-  C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
-  C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/_mingw_print_pop.h
+  C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/stddef.h
 
 
 D:/embedded/EmbeddedSoftware/SDAT/src/at.c:
@@ -42,20 +36,8 @@ C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/vadefs.h:
 
 C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_directx.h:
 
-C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/stdio.h:
-
 C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h:
 
 C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/stddef.h:
 
 C:/Users/YEWAN/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/stddef.h:
-
-C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/_mingw_print_push.h:
-
-C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h:
-
-C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/swprintf.inl:
-
-C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h:
-
-C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/_mingw_print_pop.h:
