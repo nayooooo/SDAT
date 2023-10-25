@@ -1,3 +1,5 @@
+set filename=at_test
+
 if exist "./build" (
     del /s /q "./build" & echo build directory cleared.
 ) else (
@@ -9,3 +11,4 @@ if not exist "./build" (
 cd build
 cmake .. -G "MinGW Makefiles"
 make
+%filename%.exe

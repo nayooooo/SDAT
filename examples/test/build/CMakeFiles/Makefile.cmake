@@ -85,7 +85,7 @@ set(CMAKE_MAKEFILE_DEPENDS
   "C:/Program Files/CMake/share/cmake-3.25/Modules/Platform/Windows-windres.cmake"
   "C:/Program Files/CMake/share/cmake-3.25/Modules/Platform/Windows.cmake"
   "C:/Program Files/CMake/share/cmake-3.25/Modules/Platform/WindowsPaths.cmake"
-  "D:/embedded/EmbeddedSoftware/SDAT/src/CMakeLists.txt"
+  "D:/embedded/EmbeddedSoftware/SDAT/examples/test/CMakeLists.txt"
   "CMakeFiles/3.25.1/CMakeCCompiler.cmake"
   "CMakeFiles/3.25.1/CMakeRCCompiler.cmake"
   "CMakeFiles/3.25.1/CMakeSystem.cmake"
@@ -108,5 +108,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
-  "CMakeFiles/at.dir/DependInfo.cmake"
+  "CMakeFiles/at_test.dir/DependInfo.cmake"
   )

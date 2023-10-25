@@ -9,5 +9,5 @@ set(SRC ${SRC_LIST})
 include_directories(${PROJECT_SOURCE_DIR}/include)
 
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/../lib)
-add_library(at STATIC ${SRC_LIST})
+add_library(${PROJECT_NAME} STATIC ${SRC_LIST})
 set_target_properties(at PROPERTIES PREFIX "")

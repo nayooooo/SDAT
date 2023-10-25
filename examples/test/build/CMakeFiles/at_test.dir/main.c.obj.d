@@ -1,4 +1,5 @@
-CMakeFiles/at.dir/at.c.obj: D:\embedded\EmbeddedSoftware\SDAT\src\at.c \
+CMakeFiles/at_test.dir/main.c.obj: \
+ D:\embedded\EmbeddedSoftware\SDAT\examples\test\main.c \
  D:/embedded/EmbeddedSoftware/SDAT/src/include/at.h \
  D:/embedded/EmbeddedSoftware/SDAT/src/include/at_type.h \
  C:/Users/YEWAN/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/stddef.h \
@@ -14,11 +15,9 @@ CMakeFiles/at.dir/at.c.obj: D:\embedded\EmbeddedSoftware\SDAT\src\at.c \
  C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/stdint.h \
  D:/embedded/EmbeddedSoftware/SDAT/src/include/at_stream_device.h \
  D:/embedded/EmbeddedSoftware/SDAT/src/include/at.h \
- C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/stdlib.h \
- C:/Users/YEWAN/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed/limits.h \
- C:/Users/YEWAN/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed/syslimits.h \
- C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/limits.h \
- C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/sec_api/stdlib_s.h \
- C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/malloc.h \
- C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/string.h \
- C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/sec_api/string_s.h
+ C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/stdio.h \
+ C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/_mingw_print_push.h \
+ C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
+ C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
+ C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
+ C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/_mingw_print_pop.h

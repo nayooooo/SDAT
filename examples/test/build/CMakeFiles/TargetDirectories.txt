@@ -1,0 +1,3 @@
+D:/embedded/EmbeddedSoftware/SDAT/examples/test/build/CMakeFiles/at_test.dir
+D:/embedded/EmbeddedSoftware/SDAT/examples/test/build/CMakeFiles/edit_cache.dir
+D:/embedded/EmbeddedSoftware/SDAT/examples/test/build/CMakeFiles/rebuild_cache.dir

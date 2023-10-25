@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "*.lua": "lua",
-        "*.h": "c"
+        "*.h": "c",
+        "cstdint": "c"
     }
 }
