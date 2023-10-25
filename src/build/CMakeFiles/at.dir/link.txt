@@ -1,0 +1,2 @@
+C:\Users\YEWAN\mingw64\bin\ar.exe qc D:\embedded\EmbeddedSoftware\SDAT\lib\libat.a CMakeFiles/at.dir/at.c.obj
+C:\Users\YEWAN\mingw64\bin\ranlib.exe D:\embedded\EmbeddedSoftware\SDAT\lib\libat.a
