@@ -13,6 +13,7 @@ int main()
     Stream_Init(&dev);
     dev.print(&dev, "input and output device is initialized!\r\n");
     At_Init(&at, _at_table, &dev, &dev, 0);
+    at.print(&at, "test at.print\r\n");
     printf("_atTable:        %p\r\n", at._atTable);
     printf("_input_dev:      %p\r\n", at._input_dev);
     printf("_output_dev:     %p\r\n", at._output_dev);
