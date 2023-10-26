@@ -231,6 +231,32 @@ static size_t _print(struct At* this, const char* message)
     return this->_output_dev->print(this->_output_dev, message);
 }
 
+size_t _println(struct At* this, const char* message)
+{
+    if (this == nullptr) return AT_ERROR;
+    size_t len = this->print(this, message);
+    len += this->print(this, "\r\n");
+    return len;
+}
+
+At_Err_t _printSet(struct At* this, const char* name)
+{
+    this->println(this, "");
+    if (at_memcmp(name, "", 1)) {
+        this->printf(this, "the set(%s): \r\n", name);
+    } else {
+        this->printf(this, "the set: \r\n");
+    }
+    if (!at_memcmp(this->_atTable[0].atLable, AT_LABLE_TAIL, 1)) {
+        this->println(this, "have nothing AT commond!");
+    } else {
+        for (size_t i = 0; at_memcmp(this->_atTable[0].atLable, AT_LABLE_TAIL, 1); i++) {
+            this->printf(this, "--%s\r\n", this->_atTable[i].atLable);
+        }
+    }
+    return AT_EOK;
+}
+
 static At_Err_t _At_Init(
     At* this,
     const At_State_t atTable, Stream* input_dev, Stream* output_dev,
@@ -269,6 +295,8 @@ static At_Err_t _At_Init(
 
     this->printf = _printf;
     this->print = _print;
+    this->println = _println;
+    this->printSet = _printSet;
 
     return AT_EOK;
 }

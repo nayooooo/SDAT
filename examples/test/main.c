@@ -3,7 +3,7 @@
 #include <stdio.h>
 
 struct At_State _at_table[] = {
-    { AT_LABLE_TAIL, AT_TYPE_NULL,  },
+    { AT_LABLE_TAIL, AT_TYPE_NULL, nullptr },
 };
 
 int main()
@@ -21,6 +21,7 @@ int main()
     at.printf(&at, "_terminator:     %c\r\n", at._terminator);
     at.printf(&at, "_readString:     %s\r\n", at._readString);
     at.printf(&at, "_readString_len: %d\r\n", (int)at._readString_len);
+    at.printSet(&at, "at");
 
     return 0;
 }
