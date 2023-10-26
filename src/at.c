@@ -70,11 +70,17 @@ static At_Err_t _paramAddArg(At_Param_t param, const char* arg)
         at_free(param->argv[param->argc]);
         param->argv[param->argc] = nullptr;
     }
+    printf("1\r\n");
     size_t arg_len = strlen(arg);
+    printf("2\r\n");
     param->argv[param->argc] = (char*)at_malloc(arg_len + 1);
+    printf("3\r\n");
     if (param->argv[param->argc] == nullptr) return AT_ERROR;
+    printf("4\r\n");
     at_memset(param->argv[param->argc], 0, arg_len + 1);
+    printf("5\r\n");
     at_memcpy(param->argv[param->argc], arg, arg_len);
+    printf("6\r\n");
 
     param->argc++;
     return AT_EOK;
@@ -96,12 +102,10 @@ static At_Err_t _cutString(At* this, At_Param_t param, const char* atLable)
 	{
 		str_temp = strtok(NULL, " \r\n");
         _paramAddArg(param, str_temp);
-    printf("1\r\n");
 		if (str_temp == nullptr)
 			break;
 		param->argc++;
 	}
-    printf("1\r\n");
 
 	return AT_EOK;
 }
