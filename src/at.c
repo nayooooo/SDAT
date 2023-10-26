@@ -92,11 +92,11 @@ static At_Err_t _cutString(At* this, At_Param_t param, const char* atLable)
 	str_temp = strtok(str, " \r\n");
     _paramAddCmd(param, str_temp);
 	// find at param
-    printf("1\r\n");
 	for (int i = 0; i < this->getParamMaxNum(this); i++)
 	{
 		str_temp = strtok(NULL, " \r\n");
         _paramAddArg(param, str_temp);
+    printf("1\r\n");
 		if (str_temp == nullptr)
 			break;
 		param->argc++;
