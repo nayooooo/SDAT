@@ -14,6 +14,12 @@ CMakeFiles/at.dir/at.c.obj: D:\embedded\EmbeddedSoftware\SDAT\src\at.c \
  C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/stdint.h \
  D:/embedded/EmbeddedSoftware/SDAT/src/include/at_mem.h \
  D:/embedded/EmbeddedSoftware/SDAT/src/include/at_stream_device.h \
+ C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/stdio.h \
+ C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/_mingw_print_push.h \
+ C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
+ C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
+ C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
+ C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/_mingw_print_pop.h \
  C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/stdlib.h \
  C:/Users/YEWAN/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed/limits.h \
  C:/Users/YEWAN/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed/syslimits.h \

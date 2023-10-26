@@ -4,7 +4,7 @@
 
 static size_t _print(Stream* this, const char* message)
 {
-    printf("%s", message);
+    return printf("%s", message);
 }
 
 At_Err_t Stream_Init(Stream* this)

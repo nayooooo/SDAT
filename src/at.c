@@ -1,5 +1,6 @@
 #include "at.h"
 
+#include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdarg.h>
@@ -198,10 +199,35 @@ static At_Err_t _handle(At* this, const char* atLable)
     return ret;
 }
 
-size_t _print(struct At* this, const char* message)
+static size_t _printf(struct At* this, const char* format, ...)
 {
-    if (this == nullptr) return AT_ERROR;
-    if (this->_output_dev == nullptr) return AT_ERROR;
+	va_list arg;
+	va_start(arg, format);
+	char temp[64] = { 0 };
+	char *buffer = temp;
+	size_t len = vsnprintf(temp, sizeof(temp), format, arg);
+	va_end(arg);
+	if (len > sizeof(temp) - 1) {
+        buffer = at_malloc((len + 1) * sizeof(char));
+		if (!buffer) return 0;
+		at_memset(buffer, 0, len + 1);
+		va_start(arg, format);
+        vsnprintf(buffer, len + 1, format, arg);
+        va_end(arg);
+	}
+	this->print(this, buffer);
+    if (buffer != temp) {
+        at_free(buffer);
+        buffer = nullptr;
+    }
+
+	return len;
+}
+
+static size_t _print(struct At* this, const char* message)
+{
+    if (this == nullptr) return 0;
+    if (this->_output_dev == nullptr) return 0;
     return this->_output_dev->print(this->_output_dev, message);
 }
 
@@ -241,6 +267,7 @@ static At_Err_t _At_Init(
 
     this->handle = _handle;
 
+    this->printf = _printf;
     this->print = _print;
 
     return AT_EOK;
