@@ -6,6 +6,24 @@
 
 At_Err_t _cutString(At* this, At_Param_t param, const char* atLable)
 {
+	char* str = atLable;
+
+	param->cmd = AT_LABLE_TAIL;
+	param->argc = 0;
+	for (int i = 0; i < this->getParamMaxNum(this); i++)
+		param->argv[i] = (char *)"";
+
+	// find at lable
+	param->cmd = strtok(str, " \r\n");
+	// find at param
+	for (int i = 0; i < this->getParamMaxNum(this); i++)
+	{
+		param->argv[i] = strtok(NULL, " \r\n");
+		if (param->argv[i] == nullptr)
+			break;
+		param->argc++;
+	}
+
 	return AT_EOK;
 }
 
