@@ -13,8 +13,8 @@ CMakeFiles/at_test.dir/main.c.obj: \
  C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
  C:/Users/YEWAN/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/stdint.h \
  C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/stdint.h \
+ D:/embedded/EmbeddedSoftware/SDAT/src/include/at_mem.h \
  D:/embedded/EmbeddedSoftware/SDAT/src/include/at_stream_device.h \
- D:/embedded/EmbeddedSoftware/SDAT/src/include/at.h \
  C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/stdio.h \
  C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/_mingw_print_push.h \
  C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
