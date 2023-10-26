@@ -4,22 +4,92 @@
 #include <string.h>
 #include <stdarg.h>
 
-At_Err_t _cutString(At* this, At_Param_t param, const char* atLable)
+static At_Err_t _paramInit(At_Param_t param)
+{
+    if (param == nullptr) return AT_ERROR;
+
+    _paramClear(param);
+
+    return AT_EOK;
+}
+
+static At_Err_t _paramClear(At_Param_t param)
+{
+    if (param == nullptr) return AT_ERROR;
+
+    if (param->cmd != nullptr) {
+        at_free(param->cmd);
+        param->cmd = nullptr;
+    }
+    for (int i = 0; i < param->argc; i++) {
+        if (param->argv[i]) {
+            at_free(param->argv[i]);
+            param->argv[i] = nullptr;
+        }
+    }
+    size_t arg_num = sizeof(param->argv) / sizeof(char*);
+    for (size_t i = param->argc + 1; i <= arg_num; i++) {
+        param->argv[i] = nullptr;
+    }
+    param->argc = 0;
+
+    return AT_EOK;
+}
+
+static At_Err_t _paramAddCmd(At_Param_t param, const char* cmd)
+{
+    if (param == nullptr) return AT_ERROR;
+
+    if (param->cmd) {
+        at_free(param->cmd);
+        param->cmd = nullptr;
+    }
+    size_t cmd_len = strlen(cmd);
+    param->cmd = (char*)at_malloc(cmd_len + 1);
+    if (param->cmd == nullptr) return AT_ERROR;
+    at_memset(param->cmd, 0, cmd_len + 1);
+    at_memcpy(param->cmd, cmd, cmd_len);
+
+    return AT_EOK;
+}
+
+static At_Err_t _paramAddArg(At_Param_t param, const char* arg)
+{
+    if (param == nullptr) return AT_ERROR;
+    size_t arg_num = sizeof(param->argv) / sizeof(char*);
+    if (param->argc >= arg_num) return AT_ERROR;
+
+    if (param->argv[param->argc]) {
+        at_free(param->argv[param->argc]);
+        param->argv[param->argc] = nullptr;
+    }
+    size_t arg_len = strlen(arg);
+    param->argv[param->argc] = (char*)at_malloc(arg_len + 1);
+    if (param->argv[param->argc] == nullptr) return AT_ERROR;
+    at_memset(param->argv[param->argc], 0, arg_len + 1);
+    at_memcpy(param->argv[param->argc], arg, arg_len);
+
+    param->argc++;
+    return AT_EOK;
+}
+
+static At_Err_t _cutString(At* this, At_Param_t param, const char* atLable)
 {
 	char* str = atLable;
+    char* str_temp = nullptr;
 
-	param->cmd = AT_LABLE_TAIL;
-	param->argc = 0;
-	for (int i = 0; i < this->getParamMaxNum(this); i++)
-		param->argv[i] = (char *)"";
+    _paramClear(param);
+    _paramAddCmd(param, AT_LABLE_TAIL);
 
 	// find at lable
-	param->cmd = strtok(str, " \r\n");
+	str_temp = strtok(str, " \r\n");
+    _paramAddCmd(param, str_temp);
 	// find at param
 	for (int i = 0; i < this->getParamMaxNum(this); i++)
 	{
-		param->argv[i] = strtok(NULL, " \r\n");
-		if (param->argv[i] == nullptr)
+		str_temp = strtok(NULL, " \r\n");
+        _paramAddArg(param, str_temp);
+		if (str_temp == nullptr)
 			break;
 		param->argc++;
 	}
@@ -27,16 +97,17 @@ At_Err_t _cutString(At* this, At_Param_t param, const char* atLable)
 	return AT_EOK;
 }
 
-At_State_t _checkString(At* this, At_Param_t param, const char* atLable)
+static At_State_t _checkString(At* this, At_Param_t param, const char* atLable)
 {
 	uint32_t i = 0;
 	At_State_t target = nullptr;
 
+    _paramInit(param);
 	this->cutString(this, param, atLable);
 
 	while (this->_atTable[i].atLable != AT_LABLE_TAIL)
 	{
-        if (!memcmp(this->_atTable[i].atLable, param->cmd, strlen(this->_atTable[i].atLable)))
+        if (!at_memcmp(this->_atTable[i].atLable, param->cmd, strlen(this->_atTable[i].atLable)))
 		{
 			target = &this->_atTable[i];
 			break;
@@ -59,7 +130,7 @@ static At_State_t _getStateTable(At* this)
     return this->_atTable;
 }
 
-At_Err_t _setInputDevice(At* this, Stream* input_dev)
+static At_Err_t _setInputDevice(At* this, Stream* input_dev)
 {
     if (this == nullptr) return AT_ERROR;
     if (input_dev == nullptr) return AT_ERROR;
@@ -67,7 +138,7 @@ At_Err_t _setInputDevice(At* this, Stream* input_dev)
     return AT_EOK;
 }
 
-At_Err_t _setOutputDevice(At* this, Stream* output_dev)
+static At_Err_t _setOutputDevice(At* this, Stream* output_dev)
 {
     if (this == nullptr) return AT_ERROR;
     if (output_dev == nullptr) return AT_ERROR;
@@ -76,41 +147,41 @@ At_Err_t _setOutputDevice(At* this, Stream* output_dev)
 }
 
 // dangerous
-const char* _errorToString(At_Err_t error)
+static const char* _errorToString(At_Err_t error)
 {
     static char error_str[50];
 
-    memset(error_str, 0, sizeof(error_str));
+    at_memset(error_str, 0, sizeof(error_str));
 	switch (error)
 	{
 	case AT_ERROR:
-        memcpy(error_str, "AT normal error", 16); break;
+        at_memcpy(error_str, "AT normal error", 16); break;
 	case AT_ERROR_INPUT:
-        memcpy(error_str, "AT input device error", 22); break;
+        at_memcpy(error_str, "AT input device error", 22); break;
 	case AT_ERROR_OUTPUT:
-        memcpy(error_str, "AT output device error", 23); break;
+        at_memcpy(error_str, "AT output device error", 23); break;
 	case AT_ERROR_NOT_FIND:
-        memcpy(error_str, "AT not find this string command", 32); break;
+        at_memcpy(error_str, "AT not find this string command", 32); break;
 	case AT_ERROR_NO_ACT:
-        memcpy(error_str, "AT this string command not have act", 36); break;
+        at_memcpy(error_str, "AT this string command not have act", 36); break;
 	case AT_ERROR_CANNOT_CUT:
-        memcpy(error_str, "AT this string can't be cut", 28); break;
+        at_memcpy(error_str, "AT this string can't be cut", 28); break;
     default:
-        memcpy(error_str, "AT no error", 12); break;
+        at_memcpy(error_str, "AT no error", 12); break;
 	}
     return error_str;
 }
 
 // safer
-const char* _errorToString_s(At_Err_t error)
+static const char* _errorToString_s(At_Err_t error)
 {
     static char error_str[12];
-    memset(error_str, 0, sizeof(error_str));
-    memcpy(error_str, "building...", 11);
+    at_memset(error_str, 0, sizeof(error_str));
+    at_memcpy(error_str, "building...", 11);
     return error_str;
 }
 
-At_Err_t _handle(At* this, const char* atLable)
+static At_Err_t _handle(At* this, const char* atLable)
 {
     if (this == nullptr) return AT_ERROR;
 
@@ -122,7 +193,9 @@ At_Err_t _handle(At* this, const char* atLable)
 	if (target->act == nullptr)
 		return AT_ERROR_NO_ACT;
 
-    return target->act(&param);
+    At_Err_t ret = target->act(&param);
+    _paramClear(&param);
+    return ret;
 }
 
 static At_Err_t _At_Init(
@@ -143,10 +216,10 @@ static At_Err_t _At_Init(
     this->_param_max_num = param_max_num;
     this->_terminator = terminator;
     this->_readString_len = readString_len;
-
-    this->_readString = (char*)malloc(readString_len * sizeof(char));
+    this->_readString = (char*)at_malloc(readString_len * sizeof(char));
     if (this->_readString == nullptr) return AT_ERROR;
-    memset(this->_readString, 0, this->_readString_len);
+    at_memset(this->_readString, 0, this->_readString_len);
+    this->_readString_used = 0;
 
     this->cutString = _cutString;
     this->checkString = _checkString;
@@ -177,14 +250,18 @@ At_Err_t At_Init(
     size_t temp = argc;
     size_t param_max_num; char terminator; size_t readString_len;
     param_max_num = va_arg(args, size_t); if (--temp) {
+        va_end(args);
         return _At_Init(this, atTable, input_dev, output_dev, param_max_num, AT_TERMINATOR_DEFAULT, AT_READSTRING_LEN_DEFAULT);
     }
     terminator = va_arg(args, char); if (--temp) {  // dangerous at "va_arg(args, char)", the "char"
+        va_end(args);
         return _At_Init(this, atTable, input_dev, output_dev, param_max_num, terminator, AT_READSTRING_LEN_DEFAULT);
     }
     readString_len = va_arg(args, size_t); if (--temp) {
+        va_end(args);
         return _At_Init(this, atTable, input_dev, output_dev, param_max_num, terminator, readString_len);
     }
+    va_end(args);
 
     return AT_ERROR;
 }
@@ -196,4 +273,16 @@ At_Err_t At_Init_s(
 )
 {
     return _At_Init(this, atTable, input_dev, output_dev, param_max_num, terminator, readString_len);
+}
+
+At_Err_t At_Deinit(At* this)
+{
+    if (this == nullptr) return AT_ERROR;
+
+    if (this->_readString) {
+        at_free(this->_readString);
+        this->_readString = nullptr;
+    }
+
+    return AT_EOK;
 }

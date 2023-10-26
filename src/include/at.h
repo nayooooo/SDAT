@@ -2,6 +2,7 @@
 #define __AT_H__
 
 #include "at_type.h"
+#include "at_mem.h"
 #include "at_stream_device.h"
 
 #define AT_TERMINATOR_DEFAULT            ('\n')
@@ -35,6 +36,7 @@ struct At{
     char _terminator;
     char* _readString;
     size_t _readString_len;
+    size_t _readString_used;
 };
 typedef struct At At;
 
@@ -51,5 +53,7 @@ At_Err_t At_Init_s(
     const At_State_t atTable, Stream* input_dev, Stream* output_dev,
     size_t param_max_num, char terminator, size_t readString_len
 );
+
+At_Err_t At_Deinit(At* this);
 
 #endif  // !__AT_H__
