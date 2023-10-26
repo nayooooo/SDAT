@@ -152,6 +152,30 @@ at.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\at.dir\build.make CMakeFiles/at.dir/at.c.s
 .PHONY : at.c.s
 
+at_mem.obj: at_mem.c.obj
+.PHONY : at_mem.obj
+
+# target to build an object file
+at_mem.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\at.dir\build.make CMakeFiles/at.dir/at_mem.c.obj
+.PHONY : at_mem.c.obj
+
+at_mem.i: at_mem.c.i
+.PHONY : at_mem.i
+
+# target to preprocess a source file
+at_mem.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\at.dir\build.make CMakeFiles/at.dir/at_mem.c.i
+.PHONY : at_mem.c.i
+
+at_mem.s: at_mem.c.s
+.PHONY : at_mem.s
+
+# target to generate assembly for a file
+at_mem.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\at.dir\build.make CMakeFiles/at.dir/at_mem.c.s
+.PHONY : at_mem.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -164,6 +188,9 @@ help:
 	@echo ... at.obj
 	@echo ... at.i
 	@echo ... at.s
+	@echo ... at_mem.obj
+	@echo ... at_mem.i
+	@echo ... at_mem.s
 .PHONY : help
 
 

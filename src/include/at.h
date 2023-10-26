@@ -9,25 +9,25 @@
 #define AT_READSTRING_LEN_DEFAULT        (200)
 
 struct At{
-    At_Err_t (*cutString)(At* this, At_Param_t param, const char* atLable);
-	At_State_t (*checkString)(At* this, At_Param_t param, const char* atLable);
+    At_Err_t (*cutString)(struct At* this, At_Param_t param, const char* atLable);
+	At_State_t (*checkString)(struct At* this, At_Param_t param, const char* atLable);
 
-    size_t (*getParamMaxNum)(At* this);
-    At_State_t (*getStateTable)(At* this);
+    size_t (*getParamMaxNum)(struct At* this);
+    At_State_t (*getStateTable)(struct At* this);
 
-    At_Err_t (*setInputDevice)(At* this, Stream* input_dev);
-    At_Err_t (*setOutputDevice)(At* this, Stream* output_dev);
+    At_Err_t (*setInputDevice)(struct At* this, Stream* input_dev);
+    At_Err_t (*setOutputDevice)(struct At* this, Stream* output_dev);
 
     const char* (*errorToString)(At_Err_t error);
 
-    At_Err_t (*handle)(At* this, const char* atLable);
-    At_Err_t (*handleAuto)(At* this);
+    At_Err_t (*handle)(struct At* this, const char* atLable);
+    At_Err_t (*handleAuto)(struct At* this);
 
-    size_t (*printf)(At* this, const char* format, ...)  __attribute__ ((format (printf, 2, 3)));
-    size_t (*print)(At* this, const char* message);
-    size_t (*println)(At* this, const char* message);
-    At_Err_t (*printSet)(At* this, const char* name);
-    At_Err_t (*sendInfor)(At* this, const char* infor);
+    size_t (*printf)(struct At* this, const char* format, ...)  __attribute__ ((format (printf, 2, 3)));
+    size_t (*print)(struct At* this, const char* message);
+    size_t (*println)(struct At* this, const char* message);
+    At_Err_t (*printSet)(struct At* this, const char* name);
+    At_Err_t (*sendInfor)(struct At* this, const char* infor);
 
     At_State_t _atTable;
     Stream* _input_dev;

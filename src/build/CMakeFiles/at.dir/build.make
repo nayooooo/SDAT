@@ -83,17 +83,34 @@ CMakeFiles/at.dir/at.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/at.dir/at.c.s"
 	C:\Users\YEWAN\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\embedded\EmbeddedSoftware\SDAT\src\at.c -o CMakeFiles\at.dir\at.c.s
 
+CMakeFiles/at.dir/at_mem.c.obj: CMakeFiles/at.dir/flags.make
+CMakeFiles/at.dir/at_mem.c.obj: CMakeFiles/at.dir/includes_C.rsp
+CMakeFiles/at.dir/at_mem.c.obj: D:/embedded/EmbeddedSoftware/SDAT/src/at_mem.c
+CMakeFiles/at.dir/at_mem.c.obj: CMakeFiles/at.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\embedded\EmbeddedSoftware\SDAT\src\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/at.dir/at_mem.c.obj"
+	C:\Users\YEWAN\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT CMakeFiles/at.dir/at_mem.c.obj -MF CMakeFiles\at.dir\at_mem.c.obj.d -o CMakeFiles\at.dir\at_mem.c.obj -c D:\embedded\EmbeddedSoftware\SDAT\src\at_mem.c
+
+CMakeFiles/at.dir/at_mem.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/at.dir/at_mem.c.i"
+	C:\Users\YEWAN\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E D:\embedded\EmbeddedSoftware\SDAT\src\at_mem.c > CMakeFiles\at.dir\at_mem.c.i
+
+CMakeFiles/at.dir/at_mem.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/at.dir/at_mem.c.s"
+	C:\Users\YEWAN\mingw64\bin\gcc.exe $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S D:\embedded\EmbeddedSoftware\SDAT\src\at_mem.c -o CMakeFiles\at.dir\at_mem.c.s
+
 # Object files for target at
 at_OBJECTS = \
-"CMakeFiles/at.dir/at.c.obj"
+"CMakeFiles/at.dir/at.c.obj" \
+"CMakeFiles/at.dir/at_mem.c.obj"
 
 # External object files for target at
 at_EXTERNAL_OBJECTS =
 
 D:/embedded/EmbeddedSoftware/SDAT/lib/at.a: CMakeFiles/at.dir/at.c.obj
+D:/embedded/EmbeddedSoftware/SDAT/lib/at.a: CMakeFiles/at.dir/at_mem.c.obj
 D:/embedded/EmbeddedSoftware/SDAT/lib/at.a: CMakeFiles/at.dir/build.make
 D:/embedded/EmbeddedSoftware/SDAT/lib/at.a: CMakeFiles/at.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\embedded\EmbeddedSoftware\SDAT\src\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library D:\embedded\EmbeddedSoftware\SDAT\lib\at.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\embedded\EmbeddedSoftware\SDAT\src\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library D:\embedded\EmbeddedSoftware\SDAT\lib\at.a"
 	$(CMAKE_COMMAND) -P CMakeFiles\at.dir\cmake_clean_target.cmake
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\at.dir\link.txt --verbose=$(VERBOSE)
 

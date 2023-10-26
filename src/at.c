@@ -4,15 +4,6 @@
 #include <string.h>
 #include <stdarg.h>
 
-static At_Err_t _paramInit(At_Param_t param)
-{
-    if (param == nullptr) return AT_ERROR;
-
-    _paramClear(param);
-
-    return AT_EOK;
-}
-
 static At_Err_t _paramClear(At_Param_t param)
 {
     if (param == nullptr) return AT_ERROR;
@@ -32,6 +23,15 @@ static At_Err_t _paramClear(At_Param_t param)
         param->argv[i] = nullptr;
     }
     param->argc = 0;
+
+    return AT_EOK;
+}
+
+static At_Err_t _paramInit(At_Param_t param)
+{
+    if (param == nullptr) return AT_ERROR;
+
+    _paramClear(param);
 
     return AT_EOK;
 }
@@ -75,7 +75,7 @@ static At_Err_t _paramAddArg(At_Param_t param, const char* arg)
 
 static At_Err_t _cutString(At* this, At_Param_t param, const char* atLable)
 {
-	char* str = atLable;
+	char* str = (char*)atLable;
     char* str_temp = nullptr;
 
     _paramClear(param);
