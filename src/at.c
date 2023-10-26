@@ -198,6 +198,13 @@ static At_Err_t _handle(At* this, const char* atLable)
     return ret;
 }
 
+size_t _print(struct At* this, const char* message)
+{
+    if (this == nullptr) return AT_ERROR;
+    if (this->_output_dev == nullptr) return AT_ERROR;
+    return this->_output_dev->print(this->_output_dev, message);
+}
+
 static At_Err_t _At_Init(
     At* this,
     const At_State_t atTable, Stream* input_dev, Stream* output_dev,
@@ -231,7 +238,10 @@ static At_Err_t _At_Init(
     this->setOutputDevice = _setOutputDevice;
 
     this->errorToString = _errorToString;
+
     this->handle = _handle;
+
+    this->print = _print;
 
     return AT_EOK;
 }

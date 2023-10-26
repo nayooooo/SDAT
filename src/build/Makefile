@@ -176,6 +176,30 @@ at_mem.c.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\at.dir\build.make CMakeFiles/at.dir/at_mem.c.s
 .PHONY : at_mem.c.s
 
+at_stream_device.obj: at_stream_device.c.obj
+.PHONY : at_stream_device.obj
+
+# target to build an object file
+at_stream_device.c.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\at.dir\build.make CMakeFiles/at.dir/at_stream_device.c.obj
+.PHONY : at_stream_device.c.obj
+
+at_stream_device.i: at_stream_device.c.i
+.PHONY : at_stream_device.i
+
+# target to preprocess a source file
+at_stream_device.c.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\at.dir\build.make CMakeFiles/at.dir/at_stream_device.c.i
+.PHONY : at_stream_device.c.i
+
+at_stream_device.s: at_stream_device.c.s
+.PHONY : at_stream_device.s
+
+# target to generate assembly for a file
+at_stream_device.c.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\at.dir\build.make CMakeFiles/at.dir/at_stream_device.c.s
+.PHONY : at_stream_device.c.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -191,6 +215,9 @@ help:
 	@echo ... at_mem.obj
 	@echo ... at_mem.i
 	@echo ... at_mem.s
+	@echo ... at_stream_device.obj
+	@echo ... at_stream_device.i
+	@echo ... at_stream_device.s
 .PHONY : help
 
 

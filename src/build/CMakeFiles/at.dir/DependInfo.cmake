@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "D:/embedded/EmbeddedSoftware/SDAT/src/at.c" "CMakeFiles/at.dir/at.c.obj" "gcc" "CMakeFiles/at.dir/at.c.obj.d"
   "D:/embedded/EmbeddedSoftware/SDAT/src/at_mem.c" "CMakeFiles/at.dir/at_mem.c.obj" "gcc" "CMakeFiles/at.dir/at_mem.c.obj.d"
+  "D:/embedded/EmbeddedSoftware/SDAT/src/at_stream_device.c" "CMakeFiles/at.dir/at_stream_device.c.obj" "gcc" "CMakeFiles/at.dir/at_stream_device.c.obj.d"
   )
 
 # Targets to which this target links.

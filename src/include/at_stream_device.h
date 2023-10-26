@@ -4,7 +4,7 @@
 #include "at.h"
 
 struct At_Stream_Device{
-    char a;
+    size_t (*print)(struct At_Stream_Device* this, const char* message);
 };
 typedef struct At_Stream_Device Stream;
 
