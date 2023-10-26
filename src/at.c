@@ -32,6 +32,12 @@ static At_Err_t _paramInit(At_Param_t param)
 {
     if (param == nullptr) return AT_ERROR;
 
+    param->cmd = nullptr;
+    size_t arg_num = sizeof(param->argv) / sizeof(char*);
+    for (size_t i = 0; i < arg_num; i++) {
+        param->argv[i] = nullptr;
+    }
+    param->argc = 0;
     _paramClear(param);
 
     return AT_EOK;
@@ -86,6 +92,7 @@ static At_Err_t _cutString(At* this, At_Param_t param, const char* atLable)
 	str_temp = strtok(str, " \r\n");
     _paramAddCmd(param, str_temp);
 	// find at param
+    printf("1\r\n");
 	for (int i = 0; i < this->getParamMaxNum(this); i++)
 	{
 		str_temp = strtok(NULL, " \r\n");
@@ -94,6 +101,7 @@ static At_Err_t _cutString(At* this, At_Param_t param, const char* atLable)
 			break;
 		param->argc++;
 	}
+    printf("1\r\n");
 
 	return AT_EOK;
 }
@@ -106,7 +114,7 @@ static At_State_t _checkString(At* this, At_Param_t param, const char* atLable)
     _paramInit(param);
 	this->cutString(this, param, atLable);
 
-	while (this->_atTable[i].atLable != AT_LABLE_TAIL)
+	while (at_memcmp(this->_atTable[i].atLable, AT_LABLE_TAIL, 1))
 	{
         if (!at_memcmp(this->_atTable[i].atLable, param->cmd, strlen(this->_atTable[i].atLable)))
 		{
@@ -199,6 +207,26 @@ static At_Err_t _handle(At* this, const char* atLable)
     return ret;
 }
 
+At_Err_t _handleAuto(struct At* this)
+{
+    int in = 0;
+
+	if (this->_input_dev->available(this->_input_dev)) {
+		in = this->_input_dev->read(this->_input_dev);
+		if ((in >= 0) && ((char)in != this->_terminator)) {
+            this->_readString[this->_readString_used++] = (char)in;
+			return AT_EOK;
+		} else if ((char)in == this->_terminator) {
+			At_Err_t err = this->handle(this, this->_readString);
+            at_memset(this->_readString, 0, this->_readString_len);
+            this->_readString_used = 0;
+			return err;
+		}
+	}
+
+	return AT_ERROR_INPUT;
+}
+
 static size_t _printf(struct At* this, const char* format, ...)
 {
 	va_list arg;
@@ -250,7 +278,7 @@ At_Err_t _printSet(struct At* this, const char* name)
     if (!at_memcmp(this->_atTable[0].atLable, AT_LABLE_TAIL, 1)) {
         this->println(this, "have nothing AT commond!");
     } else {
-        for (size_t i = 0; at_memcmp(this->_atTable[0].atLable, AT_LABLE_TAIL, 1); i++) {
+        for (size_t i = 0; at_memcmp(this->_atTable[i].atLable, AT_LABLE_TAIL, 1); i++) {
             this->printf(this, "--%s\r\n", this->_atTable[i].atLable);
         }
     }
@@ -298,6 +326,7 @@ static At_Err_t _At_Init(
     this->errorToString = _errorToString;
 
     this->handle = _handle;
+    this->handleAuto = _handleAuto;
 
     this->printf = _printf;
     this->print = _print;

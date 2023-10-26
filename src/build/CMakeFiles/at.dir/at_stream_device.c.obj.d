@@ -13,9 +13,6 @@ CMakeFiles/at.dir/at_stream_device.c.obj: \
  C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
  C:/Users/YEWAN/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/stdint.h \
  C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/stdint.h \
- C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/stdio.h \
- C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/_mingw_print_push.h \
- C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/_mingw_off_t.h \
- C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/swprintf.inl \
- C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/sec_api/stdio_s.h \
- C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/_mingw_print_pop.h
+ C:/Users/YEWAN/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/stdarg.h \
+ C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/stdarg.h \
+ C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/_mingw_stdarg.h
