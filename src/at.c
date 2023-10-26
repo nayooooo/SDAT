@@ -257,6 +257,12 @@ At_Err_t _printSet(struct At* this, const char* name)
     return AT_EOK;
 }
 
+At_Err_t _sendInfor(struct At* this, const char* infor)
+{
+    this->printf(this, "AT+{%s}", infor);
+    return AT_EOK;
+}
+
 static At_Err_t _At_Init(
     At* this,
     const At_State_t atTable, Stream* input_dev, Stream* output_dev,
@@ -297,6 +303,7 @@ static At_Err_t _At_Init(
     this->print = _print;
     this->println = _println;
     this->printSet = _printSet;
+    this->sendInfor = _sendInfor;
 
     return AT_EOK;
 }

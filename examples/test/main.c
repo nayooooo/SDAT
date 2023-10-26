@@ -22,6 +22,7 @@ int main()
     at.printf(&at, "_readString:     %s\r\n", at._readString);
     at.printf(&at, "_readString_len: %d\r\n", (int)at._readString_len);
     at.printSet(&at, "at");
+    at.sendInfor(&at, "Hello World!");
 
     return 0;
 }
