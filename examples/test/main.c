@@ -8,8 +8,10 @@ static size_t _print(Stream* this, const char* message)
 }
 
 static At_Err_t main_at_user_AT(At_Param_t param);
+static At_Err_t main_at_user_AT_List(At_Param_t param);
 struct At_State _at_table[] = {
     { "AT", AT_TYPE_CMD, main_at_user_AT },
+    { "AT+LS", AT_TYPE_CMD, main_at_user_AT_List },
     { AT_LABLE_TAIL, AT_TYPE_NULL, nullptr },
 };
 static At at;
@@ -17,6 +19,11 @@ static At at;
 static At_Err_t main_at_user_AT(At_Param_t param)
 {
     at.sendInfor(&at, "OK");
+}
+
+static At_Err_t main_at_user_AT_List(At_Param_t param)
+{
+    at.printSet(&at, "at");
 }
 
 int main()
@@ -36,6 +43,7 @@ int main()
     at.printSet(&at, "at");
     at.sendInfor(&at, "Hello World!");
     at.handle(&at, "AT");
+    at.handle(&at, "AT+LS");
 
     return 0;
 }
