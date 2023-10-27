@@ -4,9 +4,29 @@
 
 #pragma comment(lib, "legacy_stdio_definitions.lib")
 
+size_t rx_front = 0;
+size_t rx_rear = 0;
+static uint8_t rx_buff[256] = { 0 };
+
 static size_t _print(Stream* this, const char* message)
 {
     return printf("%s", message);
+}
+
+static size_t _available(Stream* this)
+{
+    size_t len = (rx_rear - rx_front + 256) % 256;
+    return len;
+}
+
+static int _read(Stream* this)
+{
+    if (_available(nullptr)) {
+        int out = rx_buff[rx_front];
+        rx_front = (rx_front + 1) % 256;
+        return out;
+    }
+    return -1;
 }
 
 static At_Err_t main_at_user_AT(At_Param_t param);
@@ -33,7 +53,7 @@ static At_Err_t main_at_user_AT_List(At_Param_t param)
 int main()
 {
     Stream dev;
-    Stream_Init_s(&dev, _print, _print, _print);
+    Stream_Init_s(&dev, _print, _available, _read);
     dev.print(&dev, "input and output device is initialized!\r\n");
     At_Init(&at, _at_table, &dev, &dev, 0);
     at.print(&at, "test at.print\r\n");
@@ -48,6 +68,16 @@ int main()
     at.sendInfor(&at, "Hello World!");
     at.handle(&at, "AT");
     at.handle(&at, "AT+LS");
+
+    // ≤‚ ‘∂¡»°
+    rx_front = 0; rx_rear = 0;
+    at.println(&at, "test stream device read function...");
+    memcpy(rx_buff, "AT+LS\n", 6); rx_rear = 6;
+    at.println(&at, "rx_buff set ok!");
+    for (int i = 0; i < 256; i++) {
+        at.handleAuto(&at);
+    }
+    at.println(&at, "at.handleAuto() ok!");
 
     return 0;
 }

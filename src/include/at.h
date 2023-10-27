@@ -21,6 +21,7 @@ struct At{
     const char* (*errorToString)(At_Err_t error);
 
     At_Err_t (*handle)(struct At* this, const char* atLable);
+    // 一次读取一个字符
     At_Err_t (*handleAuto)(struct At* this);
 
     // size_t (*printf)(struct At* this, const char* format, ...)  __attribute__ ((format (printf, 2, 3)));
