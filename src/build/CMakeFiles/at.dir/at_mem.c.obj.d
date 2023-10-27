@@ -12,6 +12,7 @@ CMakeFiles/at.dir/at_mem.c.obj: \
  C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/sdks/_mingw_ddk.h \
  C:/Users/YEWAN/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/stddef.h \
  C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/stddef.h \
+ D:/embedded/EmbeddedSoftware/SDAT/src/include/at_type.h \
  C:/Users/YEWAN/mingw64/x86_64-w64-mingw32/include/stdlib.h \
  C:/Users/YEWAN/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed/limits.h \
  C:/Users/YEWAN/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed/syslimits.h \
