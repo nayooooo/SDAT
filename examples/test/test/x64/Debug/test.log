@@ -1,0 +1,5 @@
+﻿  main.c
+D:\embedded\EmbeddedSoftware\SDAT\examples\test\test\main.c(36,33): warning C4113: “size_t (__cdecl *)(Stream *,const char *)”和“Stream_Available”的参数列表不同
+D:\embedded\EmbeddedSoftware\SDAT\examples\test\test\main.c(36,41): warning C4113: “size_t (__cdecl *)(Stream *,const char *)”和“Stream_Read”的参数列表不同
+D:\embedded\EmbeddedSoftware\SDAT\examples\test\test\main.c(36,41): warning C4133: “函数”: 从“size_t (__cdecl *)(Stream *,const char *)”到“Stream_Read”的类型不兼容
+  test.vcxproj -> D:\embedded\EmbeddedSoftware\SDAT\examples\test\x64\Debug\test.exe
