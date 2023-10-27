@@ -2,6 +2,10 @@
     "files.associations": {
         "*.lua": "lua",
         "*.h": "c",
-        "cstdint": "c"
+        "cstdint": "c",
+        "*.tcc": "c",
+        "string_view": "c",
+        "istream": "c",
+        "limits": "c"
     }
 }

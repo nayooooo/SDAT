@@ -5,6 +5,12 @@
 #include <string.h>
 #include <stdarg.h>
 
+#if defined(_MSC_VER)
+    #if !defined(_CRT_SECURE_NO_WARNINGS)
+    #   pragma warning(disable:4996)
+    #endif  // !_CRT_SECURE_NO_WARNINGS
+#endif  // _MSC_VER
+
 static At_Err_t _paramClear(At_Param_t param)
 {
     if (param == nullptr) return AT_ERROR;
@@ -114,7 +120,8 @@ static At_State_t _checkString(At* this, At_Param_t param, const char* atLable)
 
 	while (at_memcmp(this->_atTable[i].atLable, AT_LABLE_TAIL, 1))
 	{
-        if (!at_memcmp(this->_atTable[i].atLable, param->cmd, strlen(this->_atTable[i].atLable)))
+        size_t cmp_len = max(strlen(this->_atTable[i].atLable), strlen(param->cmd));
+        if (!at_memcmp(this->_atTable[i].atLable, param->cmd, cmp_len))
 		{
 			target = &this->_atTable[i];
 			break;
