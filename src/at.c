@@ -231,14 +231,14 @@ static size_t _printf(struct At* this, const char* format, ...)
 	va_start(arg, format);
 	char temp[64] = { 0 };
 	char *buffer = temp;
-	size_t len = vsnprintf(temp, sizeof(temp), format, arg);
+	size_t len = _vsnprintf(temp, sizeof(temp), format, arg);
 	va_end(arg);
 	if (len > sizeof(temp) - 1) {
         buffer = at_malloc((len + 1) * sizeof(char));
 		if (!buffer) return 0;
 		at_memset(buffer, 0, len + 1);
 		va_start(arg, format);
-        vsnprintf(buffer, len + 1, format, arg);
+        _vsnprintf(buffer, len + 1, format, arg);
         va_end(arg);
 	}
 	this->print(this, buffer);

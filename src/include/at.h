@@ -23,7 +23,8 @@ struct At{
     At_Err_t (*handle)(struct At* this, const char* atLable);
     At_Err_t (*handleAuto)(struct At* this);
 
-    size_t (*printf)(struct At* this, const char* format, ...)  __attribute__ ((format (printf, 2, 3)));
+    // size_t (*printf)(struct At* this, const char* format, ...)  __attribute__ ((format (printf, 2, 3)));
+    size_t (*printf)(struct At* this, const char* format, ...);
     size_t (*print)(struct At* this, const char* message);
     size_t (*println)(struct At* this, const char* message);
     At_Err_t (*printSet)(struct At* this, const char* name);
