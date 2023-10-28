@@ -28,14 +28,23 @@ int _at_user_sdev_read(Stream* this)
 }
 
 static At_Err_t _at_user_AT(At_Param_t param);
+static At_Err_t _at_user_AT_List(At_Param_t param);
 static struct At_State _atTable[] = {
 	{ "AT", AT_TYPE_CMD, _at_user_AT },
+	{ "AT+LS", AT_TYPE_CMD, _at_user_AT_List },
 	{ AT_LABLE_TAIL, AT_TYPE_NULL, nullptr },
 };
 At at;
 
 static At_Err_t _at_user_AT(At_Param_t param)
 {
+	at.sendInfor(&at, AT_USER_OK);
+	return AT_EOK;
+}
+
+static At_Err_t _at_user_AT_List(At_Param_t param)
+{
+	at.printSet(&at, "at");
 	at.sendInfor(&at, AT_USER_OK);
 	return AT_EOK;
 }
