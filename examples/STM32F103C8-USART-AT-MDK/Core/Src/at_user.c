@@ -2,7 +2,6 @@
 
 #include "usart.h"
 #include "string.h"
-extern UART_HandleTypeDef huart1;
 static Stream at_user_stream_device;
 static Stream* sdev = &at_user_stream_device;
 
@@ -18,11 +17,14 @@ int _at_user_sdev_print(Stream* this, const char* message)
 int _at_user_sdev_available(Stream* this)
 {
 	if (this == nullptr) return -1;
+	
+	return Get_UART1_Rx_Len();
 }
 
 int _at_user_sdev_read(Stream* this)
 {
 	if (this == nullptr) return -1;
+	return Read_UART1_Rx();
 }
 
 static At_Err_t _at_user_AT(At_Param_t param);
@@ -40,7 +42,7 @@ static At_Err_t _at_user_AT(At_Param_t param)
 
 At_Err_t at_user_init(void)
 {
-	At_Err_t err = Stream_Init(sdev, 3, , , );
+	At_Err_t err = Stream_Init(sdev, 3, _at_user_sdev_print, _at_user_sdev_available, _at_user_sdev_read);
 	if (err != AT_EOK) return err;
 	err = At_Init(&at, _atTable, sdev, sdev, 0);
 	return err;

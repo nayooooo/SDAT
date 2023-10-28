@@ -1,11 +1,11 @@
 --cpu Cortex-M3
 "stm32f103c8-usart-at-mdk\startup_stm32f103xb.o"
+"stm32f103c8-usart-at-mdk\at_user.o"
 "stm32f103c8-usart-at-mdk\main.o"
 "stm32f103c8-usart-at-mdk\gpio.o"
 "stm32f103c8-usart-at-mdk\usart.o"
 "stm32f103c8-usart-at-mdk\stm32f1xx_it.o"
 "stm32f103c8-usart-at-mdk\stm32f1xx_hal_msp.o"
-"stm32f103c8-usart-at-mdk\at_user.o"
 "stm32f103c8-usart-at-mdk\stm32f1xx_hal_gpio_ex.o"
 "stm32f103c8-usart-at-mdk\stm32f1xx_hal_tim.o"
 "stm32f103c8-usart-at-mdk\stm32f1xx_hal_tim_ex.o"

@@ -26,7 +26,7 @@
 
 #include <stdio.h>
 
-#include <at_user.h>
+#include "at_user.h"
 
 /* USER CODE END Includes */
 
@@ -92,8 +92,13 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   
+  if (at_user_init() == AT_EOK) {
+	  printf("at user initialize ok!\r\n");
+  } else {
+	  printf("at user initialize failed!\r\n");
+  }
+  
   printf("STM32F103C8T6 initialize OK!\r\n");
-  HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
 
   /* USER CODE END 2 */
 
@@ -101,9 +106,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-	  HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
-	  HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
-	  HAL_Delay(500);
+	  at.handleAuto(&at);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */

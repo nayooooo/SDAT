@@ -42,6 +42,10 @@ void MX_USART1_UART_Init(void);
 
 /* USER CODE BEGIN Prototypes */
 
+int Get_UART1_Rx_Len(void);
+int Write_UART1_Rx(uint8_t ch);
+int Read_UART1_Rx(void);
+
 /* USER CODE END Prototypes */
 
 #ifdef __cplusplus
