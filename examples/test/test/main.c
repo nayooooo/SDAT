@@ -55,7 +55,7 @@ int main()
     Stream dev;
     Stream_Init_s(&dev, _print, _available, _read);
     dev.print(&dev, "input and output device is initialized!\r\n");
-    At_Init(&at, _at_table, &dev, &dev, 0);
+    At_Create(&at, _at_table, &dev, &dev, 0);
     at.print(&at, "test at.print\r\n");
     at.printf(&at, "_atTable:        %p\r\n", at._atTable);
     at.printf(&at, "_input_dev:      %p\r\n", at._input_dev);
