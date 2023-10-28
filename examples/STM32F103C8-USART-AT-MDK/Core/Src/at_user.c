@@ -35,7 +35,7 @@ static struct At_State _atTable[] = {
 	{ AT_LABLE_TAIL, AT_TYPE_NULL, nullptr },
 };
 At at;
-#define AT_USER_READSTRING_LEN		(200)
+#define AT_USER_READSTRING_LEN		(100)
 static char at_user_readString[AT_USER_READSTRING_LEN] = { 0 };
 
 static At_Err_t _at_user_AT(At_Param_t param)

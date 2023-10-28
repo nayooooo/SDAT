@@ -208,6 +208,8 @@ static At_Err_t _handle(At* this, const char* atLable)
 		return AT_ERROR_NO_ACT;
 
     At_Err_t ret = target->act(&param);
+	// 如果注释此行，将能够正常解析AT指令
+	// 但是会造成内存泄露
     _paramClear(&param);
     return ret;
 }
@@ -223,7 +225,11 @@ At_Err_t _handleAuto(struct At* this)
 			return AT_EOK;
 		} else if ((char)in == this->_terminator) {
 			At_Err_t err = this->handle(this, this->_readString);
-            at_memset(this->_readString, 0, this->_readString_len);
+			// 如果注释At::handle()的_paramClear()，这里就会传递错误参数
+			// 具体为this->_readString错误传递成Default_Handler的地址
+			// 以及this->_readString_len在第一级函数调用时传递成Default_Handler的地址
+			// 在第二级函数调用时传递成另一个值
+            at_memset((void*)(this->_readString), 0, this->_readString_len);
             this->_readString_used = 0;
 			return err;
 		}

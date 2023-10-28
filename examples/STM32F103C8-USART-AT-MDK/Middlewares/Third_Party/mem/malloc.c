@@ -15,25 +15,55 @@
 
 //内存池(32字节对齐)
 __attribute__((aligned(32))) u8 mem1base[MEM1_MAX_SIZE];													//内部SRAM内存池
-__attribute__((aligned(32))) u8 mem2base[MEM2_MAX_SIZE] __attribute__((at(0X68000000)));					//外部SRAM内存池
+//__attribute__((aligned(32))) u8 mem2base[MEM2_MAX_SIZE] __attribute__((at(0X68000000)));					//外部SRAM内存池
 //内存管理表
 u16 mem1mapbase[MEM1_ALLOC_TABLE_SIZE];													//内部SRAM内存池MAP
-u16 mem2mapbase[MEM2_ALLOC_TABLE_SIZE] __attribute__((at(0X68000000+MEM2_MAX_SIZE)));	//外部SRAM内存池MAP
+//u16 mem2mapbase[MEM2_ALLOC_TABLE_SIZE] __attribute__((at(0X68000000+MEM2_MAX_SIZE)));	//外部SRAM内存池MAP
 //内存管理参数	   
-const u32 memtblsize[SRAMBANK]={MEM1_ALLOC_TABLE_SIZE,MEM2_ALLOC_TABLE_SIZE};			//内存表大小
-const u32 memblksize[SRAMBANK]={MEM1_BLOCK_SIZE,MEM2_BLOCK_SIZE};						//内存分块大小
-const u32 memsize[SRAMBANK]={MEM1_MAX_SIZE,MEM2_MAX_SIZE};								//内存总大小
+//const u32 memtblsize[SRAMBANK]={MEM1_ALLOC_TABLE_SIZE,MEM2_ALLOC_TABLE_SIZE};			//内存表大小
+//const u32 memblksize[SRAMBANK]={MEM1_BLOCK_SIZE,MEM2_BLOCK_SIZE};						//内存分块大小
+//const u32 memsize[SRAMBANK]={MEM1_MAX_SIZE,MEM2_MAX_SIZE};								//内存总大小
+const u32 memtblsize[SRAMBANK]={MEM1_ALLOC_TABLE_SIZE};			//内存表大小
+const u32 memblksize[SRAMBANK]={MEM1_BLOCK_SIZE};						//内存分块大小
+const u32 memsize[SRAMBANK]={MEM1_MAX_SIZE};								//内存总大小
 
+
+////内存管理控制器
+//struct _m_mallco_dev mallco_dev=
+//{
+//	my_mem_init,				//内存初始化
+//	my_mem_perused,				//内存使用率
+//	mem1base,mem2base,			//内存池
+//	mem1mapbase,mem2mapbase,	//内存管理状态表
+//	0,0,  		 				//内存管理未就绪
+//};
 
 //内存管理控制器
 struct _m_mallco_dev mallco_dev=
 {
 	my_mem_init,				//内存初始化
 	my_mem_perused,				//内存使用率
-	mem1base,mem2base,			//内存池
-	mem1mapbase,mem2mapbase,	//内存管理状态表
-	0,0,  		 				//内存管理未就绪
+	mem1base,					//内存池
+	mem1mapbase,				//内存管理状态表
+	0,  		 				//内存管理未就绪
 };
+
+//比较内存
+//*des:目的地址
+//*src:源地址
+//n:需要比较的内存长度(字节为单位)
+int mymemcmp(void *des,void *src,u32 n)
+{
+	u8 *xdes = des;
+	u8 *xsrc = src;
+	while (n--) {
+		if (*xdes - *xsrc) {
+			return (*xdes - *xsrc);
+		}
+		xdes++; xsrc++;
+	}
+	return 0;
+}
 
 //复制内存
 //*des:目的地址

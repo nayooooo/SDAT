@@ -25,6 +25,7 @@
 /* USER CODE BEGIN Includes */
 
 #include <stdio.h>
+#include "malloc.h"
 
 #include "at_user.h"
 
@@ -92,6 +93,7 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   
+  my_mem_init(0);
   if (at_user_init() == AT_EOK) {
 	  printf("at user initialize ok!\r\n");
   } else {
