@@ -35,6 +35,8 @@ static struct At_State _atTable[] = {
 	{ AT_LABLE_TAIL, AT_TYPE_NULL, nullptr },
 };
 At at;
+#define AT_USER_READSTRING_LEN		(200)
+static char* at_user_readString[AT_USER_READSTRING_LEN] = { 0 };
 
 static At_Err_t _at_user_AT(At_Param_t param)
 {
@@ -53,6 +55,6 @@ At_Err_t at_user_init(void)
 {
 	At_Err_t err = Stream_Init(sdev, 3, _at_user_sdev_print, _at_user_sdev_available, _at_user_sdev_read);
 	if (err != AT_EOK) return err;
-	err = At_Init(&at, _atTable, sdev, sdev, 0);
+	err = At_Init(&at, _atTable, sdev, sdev, (char*)at_user_readString, AT_USER_READSTRING_LEN, 0);
 	return err;
 }

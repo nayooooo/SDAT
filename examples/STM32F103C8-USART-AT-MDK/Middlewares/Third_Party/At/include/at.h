@@ -43,19 +43,25 @@ struct At{
 typedef struct At At;
 
 // dangerous
-At_Err_t At_Init(
+At_Err_t At_Create(
     At* this,
     const At_State_t atTable, Stream* input_dev, Stream* output_dev,
     size_t argc, ...
 );
 
 // safer
-At_Err_t At_Init_s(
+At_Err_t At_Create_s(
     At* this,
     const At_State_t atTable, Stream* input_dev, Stream* output_dev,
     size_t param_max_num, char terminator, size_t readString_len
 );
 
-At_Err_t At_Deinit(At* this);
+At_Err_t At_Init(
+    At* this,
+    const At_State_t atTable, Stream* input_dev, Stream* output_dev,
+    char* readString, size_t readString_len, size_t argc, ...
+);
+
+At_Err_t At_Delete(At* this);
 
 #endif  // !__AT_H__
