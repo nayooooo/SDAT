@@ -16,6 +16,7 @@ static At_Err_t _paramClear(At_Param_t param)
     if (param == nullptr) return AT_ERROR;
 
     if (param->cmd != nullptr) {
+		//
         at_free(param->cmd);
         param->cmd = nullptr;
     }
@@ -223,7 +224,6 @@ At_Err_t _handleAuto(struct At* this)
 			return AT_EOK;
 		} else if ((char)in == this->_terminator) {
 			At_Err_t err = this->handle(this, this->_readString);
-			//
             at_memset(this->_readString, 0, this->_readString_len);
             this->_readString_used = 0;
 			return err;
