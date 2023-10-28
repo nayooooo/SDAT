@@ -152,7 +152,23 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>32</LineNumber>
+          <LineNumber>95</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>0</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>0</BreakIfRCount>
+          <Filename>..\Middlewares\Third_Party\At\at.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression></Expression>
+        </Bp>
+        <Bp>
+          <Number>1</Number>
+          <Type>0</Type>
+          <LineNumber>122</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -161,12 +177,12 @@
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>../Core/Src/usart.c</Filename>
+          <Filename>../Core/Src/main.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\STM32F103C8_USART_AT_MDK\../Core/Src/usart.c\32</Expression>
+          <Expression>\\STM32F103C8_USART_AT_MDK\../Core/Src/main.c\122</Expression>
         </Bp>
         <Bp>
-          <Number>1</Number>
+          <Number>2</Number>
           <Type>0</Type>
           <LineNumber>85</LineNumber>
           <EnabledFlag>1</EnabledFlag>
@@ -182,11 +198,11 @@
           <Expression>\\STM32F103C8_USART_AT_MDK\../Core/Src/stm32f1xx_it.c\85</Expression>
         </Bp>
         <Bp>
-          <Number>2</Number>
+          <Number>3</Number>
           <Type>0</Type>
-          <LineNumber>225</LineNumber>
+          <LineNumber>57</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134229972</Address>
+          <Address>134228966</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -195,12 +211,28 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>..\Middlewares\Third_Party\At\at.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\STM32F103C8_USART_AT_MDK\../Middlewares/Third_Party/At/at.c\225</Expression>
+          <Expression>\\STM32F103C8_USART_AT_MDK\../Middlewares/Third_Party/At/at.c\57</Expression>
         </Bp>
         <Bp>
-          <Number>3</Number>
+          <Number>4</Number>
           <Type>0</Type>
-          <LineNumber>122</LineNumber>
+          <LineNumber>57</LineNumber>
+          <EnabledFlag>1</EnabledFlag>
+          <Address>134229038</Address>
+          <ByteObject>0</ByteObject>
+          <HtxType>0</HtxType>
+          <ManyObjects>0</ManyObjects>
+          <SizeOfObject>0</SizeOfObject>
+          <BreakByAccess>0</BreakByAccess>
+          <BreakIfRCount>1</BreakIfRCount>
+          <Filename>..\Middlewares\Third_Party\At\at.c</Filename>
+          <ExecCommand></ExecCommand>
+          <Expression>\\STM32F103C8_USART_AT_MDK\../Middlewares/Third_Party/At/at.c\57</Expression>
+        </Bp>
+        <Bp>
+          <Number>5</Number>
+          <Type>0</Type>
+          <LineNumber>32</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -209,14 +241,14 @@
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>0</BreakIfRCount>
-          <Filename>../Core/Src/main.c</Filename>
+          <Filename>../Core/Src/usart.c</Filename>
           <ExecCommand></ExecCommand>
           <Expression></Expression>
         </Bp>
         <Bp>
-          <Number>4</Number>
+          <Number>6</Number>
           <Type>0</Type>
-          <LineNumber>227</LineNumber>
+          <LineNumber>32</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -230,9 +262,9 @@
           <Expression></Expression>
         </Bp>
         <Bp>
-          <Number>5</Number>
+          <Number>7</Number>
           <Type>0</Type>
-          <LineNumber>226</LineNumber>
+          <LineNumber>227</LineNumber>
           <EnabledFlag>1</EnabledFlag>
           <Address>0</Address>
           <ByteObject>0</ByteObject>
@@ -241,7 +273,7 @@
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>0</BreakIfRCount>
-          <Filename>..\Middlewares\Third_Party\At\at.c</Filename>
+          <Filename>startup_stm32f103xb.s</Filename>
           <ExecCommand></ExecCommand>
           <Expression></Expression>
         </Bp>
@@ -276,6 +308,11 @@
           <count>5</count>
           <WinNumber>1</WinNumber>
           <ItemText>target</ItemText>
+        </Ww>
+        <Ww>
+          <count>6</count>
+          <WinNumber>1</WinNumber>
+          <ItemText>cmd_len</ItemText>
         </Ww>
       </WatchWindow1>
       <MemoryWindow1>

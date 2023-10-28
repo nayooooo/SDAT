@@ -93,7 +93,6 @@ static At_Err_t _cutString(At* this, At_Param_t param, const char* atLable)
     char* str_temp = nullptr;
 
     _paramClear(param);
-    _paramAddCmd(param, AT_LABLE_TAIL);
 
 	// find at lable
 	str_temp = strtok(str, " \r\n");
@@ -116,7 +115,6 @@ static At_State_t _checkString(At* this, At_Param_t param, const char* atLable)
 	uint32_t i = 0;
 	At_State_t target = nullptr;
 
-    _paramInit(param);
 	this->cutString(this, param, atLable);
 
 	while (at_memcmp(this->_atTable[i].atLable, AT_LABLE_TAIL, 1))
@@ -201,6 +199,7 @@ static At_Err_t _handle(At* this, const char* atLable)
     if (this == nullptr) return AT_ERROR;
 
 	struct At_Param param;
+    _paramInit(&param);
     At_State_t target = this->checkString(this, &param, atLable);
 
 	if (target == nullptr)
