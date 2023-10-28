@@ -24,6 +24,7 @@
 "stm32f103c8-usart-at-mdk\at.o"
 "stm32f103c8-usart-at-mdk\at_mem.o"
 "stm32f103c8-usart-at-mdk\at_stream_device.o"
+"stm32f103c8-usart-at-mdk\malloc.o"
 --strict --scatter "STM32F103C8-USART-AT-MDK\STM32F103C8-USART-AT-MDK.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
