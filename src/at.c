@@ -103,7 +103,6 @@ static At_Err_t _cutString(At* this, At_Param_t param, const char* atLable)
 		if (str_temp == nullptr)
 			break;
         _paramAddArg(param, str_temp);
-		param->argc++;
 	}
 
 	return AT_EOK;

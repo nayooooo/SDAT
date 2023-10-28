@@ -152,18 +152,18 @@
         <Bp>
           <Number>0</Number>
           <Type>0</Type>
-          <LineNumber>228</LineNumber>
+          <LineNumber>58</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134229000</Address>
+          <Address>134227680</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
           <SizeOfObject>0</SizeOfObject>
           <BreakByAccess>0</BreakByAccess>
           <BreakIfRCount>1</BreakIfRCount>
-          <Filename>..\Middlewares\Third_Party\At\at.c</Filename>
+          <Filename>..\Core\Src\at_user.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\STM32F103C8_USART_AT_MDK\../Middlewares/Third_Party/At/at.c\228</Expression>
+          <Expression>\\STM32F103C8_USART_AT_MDK\../Core/Src/at_user.c\58</Expression>
         </Bp>
         <Bp>
           <Number>1</Number>
@@ -184,9 +184,9 @@
         <Bp>
           <Number>2</Number>
           <Type>0</Type>
-          <LineNumber>211</LineNumber>
+          <LineNumber>206</LineNumber>
           <EnabledFlag>1</EnabledFlag>
-          <Address>134228806</Address>
+          <Address>134228928</Address>
           <ByteObject>0</ByteObject>
           <HtxType>0</HtxType>
           <ManyObjects>0</ManyObjects>
@@ -195,87 +195,7 @@
           <BreakIfRCount>1</BreakIfRCount>
           <Filename>..\Middlewares\Third_Party\At\at.c</Filename>
           <ExecCommand></ExecCommand>
-          <Expression>\\STM32F103C8_USART_AT_MDK\../Middlewares/Third_Party/At/at.c\211</Expression>
-        </Bp>
-        <Bp>
-          <Number>3</Number>
-          <Type>0</Type>
-          <LineNumber>32</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>startup_stm32f103xb.s</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-        <Bp>
-          <Number>4</Number>
-          <Type>0</Type>
-          <LineNumber>194</LineNumber>
-          <EnabledFlag>0</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>startup_stm32f103xb.s</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-        <Bp>
-          <Number>5</Number>
-          <Type>0</Type>
-          <LineNumber>213</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>..\Middlewares\Third_Party\At\at.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-        <Bp>
-          <Number>6</Number>
-          <Type>0</Type>
-          <LineNumber>230</LineNumber>
-          <EnabledFlag>1</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>..\Middlewares\Third_Party\At\at.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
-        </Bp>
-        <Bp>
-          <Number>7</Number>
-          <Type>0</Type>
-          <LineNumber>197</LineNumber>
-          <EnabledFlag>0</EnabledFlag>
-          <Address>0</Address>
-          <ByteObject>0</ByteObject>
-          <HtxType>0</HtxType>
-          <ManyObjects>0</ManyObjects>
-          <SizeOfObject>0</SizeOfObject>
-          <BreakByAccess>0</BreakByAccess>
-          <BreakIfRCount>0</BreakIfRCount>
-          <Filename>..\Middlewares\Third_Party\At\at.c</Filename>
-          <ExecCommand></ExecCommand>
-          <Expression></Expression>
+          <Expression>\\STM32F103C8_USART_AT_MDK\../Middlewares/Third_Party/At/at.c\206</Expression>
         </Bp>
       </Breakpoint>
       <WatchWindow1>

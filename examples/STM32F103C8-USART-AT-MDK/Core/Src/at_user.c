@@ -29,9 +29,11 @@ int _at_user_sdev_read(Stream* this)
 
 static At_Err_t _at_user_AT(At_Param_t param);
 static At_Err_t _at_user_AT_List(At_Param_t param);
+static At_Err_t _at_user_AT_LED(At_Param_t param);
 static struct At_State _atTable[] = {
 	{ "AT", AT_TYPE_CMD, _at_user_AT },
 	{ "AT+LS", AT_TYPE_CMD, _at_user_AT_List },
+	{ "AT+LED", AT_TYPE_CMD, _at_user_AT_LED },
 	{ AT_LABLE_TAIL, AT_TYPE_NULL, nullptr },
 };
 At at;
@@ -49,6 +51,36 @@ static At_Err_t _at_user_AT_List(At_Param_t param)
 	at.printSet(&at, "at");
 	at.sendInfor(&at, AT_USER_OK);
 	return AT_EOK;
+}
+
+static At_Err_t _at_user_AT_LED(At_Param_t param)
+{
+	if (param->argc != 1) {
+		at.sendInfor(&at, AT_USER_ERROR_ARGC);
+		return AT_ERROR;
+	}
+	
+	size_t len;
+	int ret;
+	
+	len = max(strlen(param->argv[0]), strlen("on"));
+	ret = at_memcmp(param->argv[0], "on", len);
+	if (!ret) {
+		HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, 0);
+		at.sendInfor(&at, AT_USER_OK);
+		return AT_EOK;
+	}
+	
+	len = max(strlen(param->argv[0]), strlen("off"));
+	ret = at_memcmp(param->argv[0], "off", len);
+	if (!ret) {
+		HAL_GPIO_WritePin(LED1_GPIO_Port, LED1_Pin, 1);
+		at.sendInfor(&at, AT_USER_OK);
+		return AT_EOK;
+	}
+	
+	at.sendInfor(&at, AT_USER_ERROR_NOTFIND);
+	return AT_ERROR;
 }
 
 At_Err_t at_user_init(void)
