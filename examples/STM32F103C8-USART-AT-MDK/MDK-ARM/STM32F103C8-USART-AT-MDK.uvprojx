@@ -419,6 +419,11 @@
               <FileType>1</FileType>
               <FilePath>../Core/Src/stm32f1xx_hal_msp.c</FilePath>
             </File>
+            <File>
+              <FileName>at_user.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\at_user.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -507,6 +512,26 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Middlewares/At</GroupName>
+          <Files>
+            <File>
+              <FileName>at.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\Third_Party\At\at.c</FilePath>
+            </File>
+            <File>
+              <FileName>at_mem.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\Third_Party\At\at_mem.c</FilePath>
+            </File>
+            <File>
+              <FileName>at_stream_device.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Middlewares\Third_Party\At\at_stream_device.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
@@ -525,5 +550,14 @@
     </components>
     <files/>
   </RTE>
+
+  <LayerInfo>
+    <Layers>
+      <Layer>
+        <LayName>STM32F103C8-USART-AT-MDK</LayName>
+        <LayPrjMark>1</LayPrjMark>
+      </Layer>
+    </Layers>
+  </LayerInfo>
 
 </Project>
