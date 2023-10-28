@@ -26,7 +26,7 @@ static At_Err_t _paramClear(At_Param_t param)
         }
     }
     size_t arg_num = sizeof(param->argv) / sizeof(char*);
-    for (size_t i = param->argc + 1; i <= arg_num; i++) {
+    for (size_t i = param->argc + 1; i < arg_num; i++) {
         param->argv[i] = nullptr;
     }
     param->argc = 0;

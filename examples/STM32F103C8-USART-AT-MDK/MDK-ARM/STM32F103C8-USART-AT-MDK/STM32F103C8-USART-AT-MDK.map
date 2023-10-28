@@ -1605,59 +1605,59 @@ Image Symbol Table
     [Anonymous Symbol]                       0x08002b04   Section        0  at.o(.text._getParamMaxNum)
     _getStateTable                           0x08002b11   Thumb Code    10  at.o(.text._getStateTable)
     [Anonymous Symbol]                       0x08002b10   Section        0  at.o(.text._getStateTable)
-    _handle                                  0x08002b1d   Thumb Code   174  at.o(.text._handle)
+    _handle                                  0x08002b1d   Thumb Code   170  at.o(.text._handle)
     [Anonymous Symbol]                       0x08002b1c   Section        0  at.o(.text._handle)
-    [Anonymous Symbol]                       0x08002bcc   Section        0  at.o(.text._handleAuto)
-    _print                                   0x08002c29   Thumb Code    26  at.o(.text._print)
-    [Anonymous Symbol]                       0x08002c28   Section        0  at.o(.text._print)
-    _printSet                                0x08002c45   Thumb Code   168  at.o(.text._printSet)
-    [Anonymous Symbol]                       0x08002c44   Section        0  at.o(.text._printSet)
-    _println                                 0x08002d2d   Thumb Code    40  at.o(.text._println)
-    [Anonymous Symbol]                       0x08002d2c   Section        0  at.o(.text._println)
-    [Anonymous Symbol]                       0x08002d58   Section        0  at.o(.text._sendInfor)
-    _setInputDevice                          0x08002d71   Thumb Code    18  at.o(.text._setInputDevice)
-    [Anonymous Symbol]                       0x08002d70   Section        0  at.o(.text._setInputDevice)
-    _setOutputDevice                         0x08002d85   Thumb Code    18  at.o(.text._setOutputDevice)
-    [Anonymous Symbol]                       0x08002d84   Section        0  at.o(.text._setOutputDevice)
-    [Anonymous Symbol]                       0x08002d98   Section        0  at_mem.o(.text.at_free)
-    [Anonymous Symbol]                       0x08002da0   Section        0  at_mem.o(.text.at_malloc)
-    [Anonymous Symbol]                       0x08002da8   Section        0  at_mem.o(.text.at_memcmp)
-    [Anonymous Symbol]                       0x08002dac   Section        0  at_mem.o(.text.at_memcpy)
-    [Anonymous Symbol]                       0x08002db8   Section        0  at_mem.o(.text.at_memset)
-    [Anonymous Symbol]                       0x08002dc8   Section        0  at_user.o(.text.at_user_init)
-    [Anonymous Symbol]                       0x08002e30   Section        0  usart.o(.text.fputc)
-    [Anonymous Symbol]                       0x08002e58   Section        0  main.o(.text.main)
-    [Anonymous Symbol]                       0x08002f44   Section        0  malloc.o(.text.my_mem_init)
-    [Anonymous Symbol]                       0x08002f70   Section        0  malloc.o(.text.my_mem_perused)
-    [Anonymous Symbol]                       0x0800302c   Section        0  malloc.o(.text.myfree)
-    [Anonymous Symbol]                       0x08003074   Section        0  malloc.o(.text.mymalloc)
-    [Anonymous Symbol]                       0x080032e0   Section        0  malloc.o(.text.mymemcmp)
-    [Anonymous Symbol]                       0x0800333c   Section        0  malloc.o(.text.mymemcpy)
-    [Anonymous Symbol]                       0x080033b0   Section        0  malloc.o(.text.mymemset)
-    i._is_digit                              0x080033c4   Section        0  __printf_wp.o(i._is_digit)
-    locale$$code                             0x080033d4   Section       44  lc_ctype_c.o(locale$$code)
-    initial_mbstate                          0x08003400   Data           8  _printf_wctomb.o(.constdata)
-    .constdata                               0x08003400   Section        8  _printf_wctomb.o(.constdata)
-    uc_hextab                                0x08003408   Data          20  _printf_hex_int_ll_ptr.o(.constdata)
-    .constdata                               0x08003408   Section       40  _printf_hex_int_ll_ptr.o(.constdata)
-    lc_hextab                                0x0800341c   Data          20  _printf_hex_int_ll_ptr.o(.constdata)
-    maptable                                 0x08003430   Data          17  __printf_flags_ss_wp.o(.constdata)
-    .constdata                               0x08003430   Section       17  __printf_flags_ss_wp.o(.constdata)
-    HAL_RCC_GetSysClockFreq.aPredivFactorTable 0x08003459   Data           2  stm32f1xx_hal_rcc.o(.rodata.HAL_RCC_GetSysClockFreq.aPredivFactorTable)
-    [Anonymous Symbol]                       0x08003459   Section        0  stm32f1xx_hal_rcc.o(.rodata.HAL_RCC_GetSysClockFreq.aPredivFactorTable)
-    HAL_RCC_GetSysClockFreq.aPLLMULFactorTable 0x0800345b   Data          16  stm32f1xx_hal_rcc.o(.rodata.cst16)
-    [Anonymous Symbol]                       0x0800345b   Section        0  stm32f1xx_hal_rcc.o(.rodata.cst16)
-    .L.str.3                                 0x0800346b   Data           3  at_user.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x0800346b   Section        0  at_user.o(.rodata.str1.1)
-    .L.str.1                                 0x08003477   Data           4  at.o(.rodata.str1.1)
-    [Anonymous Symbol]                       0x08003477   Section        0  at.o(.rodata.str1.1)
-    .L.str.3                                 0x0800347b   Data          16  at.o(.rodata.str1.1)
-    .L.str.9                                 0x0800348b   Data          12  at.o(.rodata.str1.1)
-    .L.str.2                                 0x08003496   Data           1  at.o(.rodata.str1.1)
-    locale$$data                             0x080034b8   Section      272  lc_ctype_c.o(locale$$data)
-    __lcctype_c_name                         0x080034bc   Data           2  lc_ctype_c.o(locale$$data)
-    __lcctype_c_start                        0x080034c4   Data           0  lc_ctype_c.o(locale$$data)
-    __lcctype_c_end                          0x080035c8   Data           0  lc_ctype_c.o(locale$$data)
+    [Anonymous Symbol]                       0x08002bc8   Section        0  at.o(.text._handleAuto)
+    _print                                   0x08002c25   Thumb Code    26  at.o(.text._print)
+    [Anonymous Symbol]                       0x08002c24   Section        0  at.o(.text._print)
+    _printSet                                0x08002c41   Thumb Code   168  at.o(.text._printSet)
+    [Anonymous Symbol]                       0x08002c40   Section        0  at.o(.text._printSet)
+    _println                                 0x08002d29   Thumb Code    40  at.o(.text._println)
+    [Anonymous Symbol]                       0x08002d28   Section        0  at.o(.text._println)
+    [Anonymous Symbol]                       0x08002d54   Section        0  at.o(.text._sendInfor)
+    _setInputDevice                          0x08002d6d   Thumb Code    18  at.o(.text._setInputDevice)
+    [Anonymous Symbol]                       0x08002d6c   Section        0  at.o(.text._setInputDevice)
+    _setOutputDevice                         0x08002d81   Thumb Code    18  at.o(.text._setOutputDevice)
+    [Anonymous Symbol]                       0x08002d80   Section        0  at.o(.text._setOutputDevice)
+    [Anonymous Symbol]                       0x08002d94   Section        0  at_mem.o(.text.at_free)
+    [Anonymous Symbol]                       0x08002d9c   Section        0  at_mem.o(.text.at_malloc)
+    [Anonymous Symbol]                       0x08002da4   Section        0  at_mem.o(.text.at_memcmp)
+    [Anonymous Symbol]                       0x08002da8   Section        0  at_mem.o(.text.at_memcpy)
+    [Anonymous Symbol]                       0x08002db4   Section        0  at_mem.o(.text.at_memset)
+    [Anonymous Symbol]                       0x08002dc4   Section        0  at_user.o(.text.at_user_init)
+    [Anonymous Symbol]                       0x08002e2c   Section        0  usart.o(.text.fputc)
+    [Anonymous Symbol]                       0x08002e54   Section        0  main.o(.text.main)
+    [Anonymous Symbol]                       0x08002f40   Section        0  malloc.o(.text.my_mem_init)
+    [Anonymous Symbol]                       0x08002f6c   Section        0  malloc.o(.text.my_mem_perused)
+    [Anonymous Symbol]                       0x08003028   Section        0  malloc.o(.text.myfree)
+    [Anonymous Symbol]                       0x08003070   Section        0  malloc.o(.text.mymalloc)
+    [Anonymous Symbol]                       0x080032dc   Section        0  malloc.o(.text.mymemcmp)
+    [Anonymous Symbol]                       0x08003338   Section        0  malloc.o(.text.mymemcpy)
+    [Anonymous Symbol]                       0x080033ac   Section        0  malloc.o(.text.mymemset)
+    i._is_digit                              0x080033c0   Section        0  __printf_wp.o(i._is_digit)
+    locale$$code                             0x080033d0   Section       44  lc_ctype_c.o(locale$$code)
+    initial_mbstate                          0x080033fc   Data           8  _printf_wctomb.o(.constdata)
+    .constdata                               0x080033fc   Section        8  _printf_wctomb.o(.constdata)
+    uc_hextab                                0x08003404   Data          20  _printf_hex_int_ll_ptr.o(.constdata)
+    .constdata                               0x08003404   Section       40  _printf_hex_int_ll_ptr.o(.constdata)
+    lc_hextab                                0x08003418   Data          20  _printf_hex_int_ll_ptr.o(.constdata)
+    maptable                                 0x0800342c   Data          17  __printf_flags_ss_wp.o(.constdata)
+    .constdata                               0x0800342c   Section       17  __printf_flags_ss_wp.o(.constdata)
+    HAL_RCC_GetSysClockFreq.aPredivFactorTable 0x08003455   Data           2  stm32f1xx_hal_rcc.o(.rodata.HAL_RCC_GetSysClockFreq.aPredivFactorTable)
+    [Anonymous Symbol]                       0x08003455   Section        0  stm32f1xx_hal_rcc.o(.rodata.HAL_RCC_GetSysClockFreq.aPredivFactorTable)
+    HAL_RCC_GetSysClockFreq.aPLLMULFactorTable 0x08003457   Data          16  stm32f1xx_hal_rcc.o(.rodata.cst16)
+    [Anonymous Symbol]                       0x08003457   Section        0  stm32f1xx_hal_rcc.o(.rodata.cst16)
+    .L.str.3                                 0x08003467   Data           3  at_user.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x08003467   Section        0  at_user.o(.rodata.str1.1)
+    .L.str.1                                 0x08003473   Data           4  at.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x08003473   Section        0  at.o(.rodata.str1.1)
+    .L.str.3                                 0x08003477   Data          16  at.o(.rodata.str1.1)
+    .L.str.9                                 0x08003487   Data          12  at.o(.rodata.str1.1)
+    .L.str.2                                 0x08003492   Data           1  at.o(.rodata.str1.1)
+    locale$$data                             0x080034b4   Section      272  lc_ctype_c.o(locale$$data)
+    __lcctype_c_name                         0x080034b8   Data           2  lc_ctype_c.o(locale$$data)
+    __lcctype_c_start                        0x080034c0   Data           0  lc_ctype_c.o(locale$$data)
+    __lcctype_c_end                          0x080035c4   Data           0  lc_ctype_c.o(locale$$data)
     _strtok_saves1                           0x20000000   Data           4  strtok.o(.data)
     .data                                    0x20000000   Section        4  strtok.o(.data)
     .L_MergedGlobals                         0x20000004   Data           8  stm32f1xx_hal.o(.data..L_MergedGlobals)
@@ -1953,30 +1953,30 @@ Image Symbol Table
     _at_user_sdev_available                  0x0800271d   Thumb Code    14  at_user.o(.text._at_user_sdev_available)
     _at_user_sdev_print                      0x0800272d   Thumb Code    54  at_user.o(.text._at_user_sdev_print)
     _at_user_sdev_read                       0x08002765   Thumb Code    14  at_user.o(.text._at_user_sdev_read)
-    _handleAuto                              0x08002bcd   Thumb Code    90  at.o(.text._handleAuto)
-    _sendInfor                               0x08002d59   Thumb Code    16  at.o(.text._sendInfor)
-    at_free                                  0x08002d99   Thumb Code     8  at_mem.o(.text.at_free)
-    at_malloc                                0x08002da1   Thumb Code     8  at_mem.o(.text.at_malloc)
-    at_memcmp                                0x08002da9   Thumb Code     4  at_mem.o(.text.at_memcmp)
-    at_memcpy                                0x08002dad   Thumb Code    12  at_mem.o(.text.at_memcpy)
-    at_memset                                0x08002db9   Thumb Code    14  at_mem.o(.text.at_memset)
-    at_user_init                             0x08002dc9   Thumb Code   102  at_user.o(.text.at_user_init)
-    fputc                                    0x08002e31   Thumb Code    40  usart.o(.text.fputc)
-    main                                     0x08002e59   Thumb Code   152  main.o(.text.main)
-    my_mem_init                              0x08002f45   Thumb Code    42  malloc.o(.text.my_mem_init)
-    my_mem_perused                           0x08002f71   Thumb Code   188  malloc.o(.text.my_mem_perused)
-    myfree                                   0x0800302d   Thumb Code    72  malloc.o(.text.myfree)
-    mymalloc                                 0x08003075   Thumb Code   620  malloc.o(.text.mymalloc)
-    mymemcmp                                 0x080032e1   Thumb Code    90  malloc.o(.text.mymemcmp)
-    mymemcpy                                 0x0800333d   Thumb Code   114  malloc.o(.text.mymemcpy)
-    mymemset                                 0x080033b1   Thumb Code    20  malloc.o(.text.mymemset)
-    _is_digit                                0x080033c5   Thumb Code    14  __printf_wp.o(i._is_digit)
-    _get_lc_ctype                            0x080033d5   Thumb Code    44  lc_ctype_c.o(locale$$code)
-    AHBPrescTable                            0x08003441   Data          16  system_stm32f1xx.o(.rodata.AHBPrescTable)
-    APBPrescTable                            0x08003451   Data           8  system_stm32f1xx.o(.rodata.APBPrescTable)
-    Region$$Table$$Base                      0x08003498   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x080034b8   Number         0  anon$$obj.o(Region$$Table)
-    __ctype                                  0x080034c5   Data           0  lc_ctype_c.o(locale$$data)
+    _handleAuto                              0x08002bc9   Thumb Code    90  at.o(.text._handleAuto)
+    _sendInfor                               0x08002d55   Thumb Code    16  at.o(.text._sendInfor)
+    at_free                                  0x08002d95   Thumb Code     8  at_mem.o(.text.at_free)
+    at_malloc                                0x08002d9d   Thumb Code     8  at_mem.o(.text.at_malloc)
+    at_memcmp                                0x08002da5   Thumb Code     4  at_mem.o(.text.at_memcmp)
+    at_memcpy                                0x08002da9   Thumb Code    12  at_mem.o(.text.at_memcpy)
+    at_memset                                0x08002db5   Thumb Code    14  at_mem.o(.text.at_memset)
+    at_user_init                             0x08002dc5   Thumb Code   102  at_user.o(.text.at_user_init)
+    fputc                                    0x08002e2d   Thumb Code    40  usart.o(.text.fputc)
+    main                                     0x08002e55   Thumb Code   152  main.o(.text.main)
+    my_mem_init                              0x08002f41   Thumb Code    42  malloc.o(.text.my_mem_init)
+    my_mem_perused                           0x08002f6d   Thumb Code   188  malloc.o(.text.my_mem_perused)
+    myfree                                   0x08003029   Thumb Code    72  malloc.o(.text.myfree)
+    mymalloc                                 0x08003071   Thumb Code   620  malloc.o(.text.mymalloc)
+    mymemcmp                                 0x080032dd   Thumb Code    90  malloc.o(.text.mymemcmp)
+    mymemcpy                                 0x08003339   Thumb Code   114  malloc.o(.text.mymemcpy)
+    mymemset                                 0x080033ad   Thumb Code    20  malloc.o(.text.mymemset)
+    _is_digit                                0x080033c1   Thumb Code    14  __printf_wp.o(i._is_digit)
+    _get_lc_ctype                            0x080033d1   Thumb Code    44  lc_ctype_c.o(locale$$code)
+    AHBPrescTable                            0x0800343d   Data          16  system_stm32f1xx.o(.rodata.AHBPrescTable)
+    APBPrescTable                            0x0800344d   Data           8  system_stm32f1xx.o(.rodata.APBPrescTable)
+    Region$$Table$$Base                      0x08003494   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x080034b4   Number         0  anon$$obj.o(Region$$Table)
+    __ctype                                  0x080034c1   Data           0  lc_ctype_c.o(locale$$data)
     uwTickFreq                               0x20000004   Data           1  stm32f1xx_hal.o(.data..L_MergedGlobals)
     uwTickPrio                               0x20000008   Data           4  stm32f1xx_hal.o(.data..L_MergedGlobals)
     SystemCoreClock                          0x2000000c   Data           4  system_stm32f1xx.o(.data.SystemCoreClock)
@@ -2001,7 +2001,7 @@ Memory Map of the image
 
   Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00003640, Max: 0x00010000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000035c8, Max: 0x00010000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000035c4, Max: 0x00010000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -2218,54 +2218,54 @@ Memory Map of the image
     0x08002b04   0x08002b04   0x0000000c   Code   RO          622    .text._getParamMaxNum  at.o
     0x08002b10   0x08002b10   0x0000000a   Code   RO          624    .text._getStateTable  at.o
     0x08002b1a   0x08002b1a   0x00000002   PAD
-    0x08002b1c   0x08002b1c   0x000000ae   Code   RO          632    .text._handle       at.o
-    0x08002bca   0x08002bca   0x00000002   PAD
-    0x08002bcc   0x08002bcc   0x0000005a   Code   RO          606    .text._handleAuto   at.o
-    0x08002c26   0x08002c26   0x00000002   PAD
-    0x08002c28   0x08002c28   0x0000001a   Code   RO          636    .text._print        at.o
-    0x08002c42   0x08002c42   0x00000002   PAD
-    0x08002c44   0x08002c44   0x000000e8   Code   RO          640    .text._printSet     at.o
-    0x08002d2c   0x08002d2c   0x0000002c   Code   RO          638    .text._println      at.o
-    0x08002d58   0x08002d58   0x00000018   Code   RO          608    .text._sendInfor    at.o
-    0x08002d70   0x08002d70   0x00000012   Code   RO          626    .text._setInputDevice  at.o
-    0x08002d82   0x08002d82   0x00000002   PAD
-    0x08002d84   0x08002d84   0x00000012   Code   RO          628    .text._setOutputDevice  at.o
-    0x08002d96   0x08002d96   0x00000002   PAD
-    0x08002d98   0x08002d98   0x00000008   Code   RO          654    .text.at_free       at_mem.o
-    0x08002da0   0x08002da0   0x00000008   Code   RO          652    .text.at_malloc     at_mem.o
-    0x08002da8   0x08002da8   0x00000004   Code   RO          658    .text.at_memcmp     at_mem.o
-    0x08002dac   0x08002dac   0x0000000c   Code   RO          660    .text.at_memcpy     at_mem.o
-    0x08002db8   0x08002db8   0x0000000e   Code   RO          656    .text.at_memset     at_mem.o
-    0x08002dc6   0x08002dc6   0x00000002   PAD
-    0x08002dc8   0x08002dc8   0x00000066   Code   RO           17    .text.at_user_init  at_user.o
-    0x08002e2e   0x08002e2e   0x00000002   PAD
-    0x08002e30   0x08002e30   0x00000028   Code   RO           60    .text.fputc         usart.o
-    0x08002e58   0x08002e58   0x000000ec   Code   RO           35    .text.main          main.o
-    0x08002f44   0x08002f44   0x0000002a   Code   RO          682    .text.my_mem_init   malloc.o
-    0x08002f6e   0x08002f6e   0x00000002   PAD
-    0x08002f70   0x08002f70   0x000000bc   Code   RO          684    .text.my_mem_perused  malloc.o
-    0x0800302c   0x0800302c   0x00000048   Code   RO          696    .text.myfree        malloc.o
-    0x08003074   0x08003074   0x0000026c   Code   RO          698    .text.mymalloc      malloc.o
-    0x080032e0   0x080032e0   0x0000005a   Code   RO          686    .text.mymemcmp      malloc.o
-    0x0800333a   0x0800333a   0x00000002   PAD
-    0x0800333c   0x0800333c   0x00000072   Code   RO          688    .text.mymemcpy      malloc.o
-    0x080033ae   0x080033ae   0x00000002   PAD
-    0x080033b0   0x080033b0   0x00000014   Code   RO          690    .text.mymemset      malloc.o
-    0x080033c4   0x080033c4   0x0000000e   Code   RO          795    i._is_digit         c_w.l(__printf_wp.o)
-    0x080033d2   0x080033d2   0x00000002   PAD
-    0x080033d4   0x080033d4   0x0000002c   Code   RO          885    locale$$code        c_w.l(lc_ctype_c.o)
-    0x08003400   0x08003400   0x00000008   Data   RO          754    .constdata          c_w.l(_printf_wctomb.o)
-    0x08003408   0x08003408   0x00000028   Data   RO          783    .constdata          c_w.l(_printf_hex_int_ll_ptr.o)
-    0x08003430   0x08003430   0x00000011   Data   RO          803    .constdata          c_w.l(__printf_flags_ss_wp.o)
-    0x08003441   0x08003441   0x00000010   Data   RO          596    .rodata.AHBPrescTable  system_stm32f1xx.o
-    0x08003451   0x08003451   0x00000008   Data   RO          597    .rodata.APBPrescTable  system_stm32f1xx.o
-    0x08003459   0x08003459   0x00000002   Data   RO          347    .rodata.HAL_RCC_GetSysClockFreq.aPredivFactorTable  stm32f1xx_hal_rcc.o
-    0x0800345b   0x0800345b   0x00000010   Data   RO          346    .rodata.cst16       stm32f1xx_hal_rcc.o
-    0x0800346b   0x0800346b   0x0000000c   Data   RO           25    .rodata.str1.1      at_user.o
-    0x08003477   0x08003477   0x00000020   Data   RO          642    .rodata.str1.1      at.o
-    0x08003497   0x08003497   0x00000001   PAD
-    0x08003498   0x08003498   0x00000020   Data   RO         1020    Region$$Table       anon$$obj.o
-    0x080034b8   0x080034b8   0x00000110   Data   RO          884    locale$$data        c_w.l(lc_ctype_c.o)
+    0x08002b1c   0x08002b1c   0x000000aa   Code   RO          632    .text._handle       at.o
+    0x08002bc6   0x08002bc6   0x00000002   PAD
+    0x08002bc8   0x08002bc8   0x0000005a   Code   RO          606    .text._handleAuto   at.o
+    0x08002c22   0x08002c22   0x00000002   PAD
+    0x08002c24   0x08002c24   0x0000001a   Code   RO          636    .text._print        at.o
+    0x08002c3e   0x08002c3e   0x00000002   PAD
+    0x08002c40   0x08002c40   0x000000e8   Code   RO          640    .text._printSet     at.o
+    0x08002d28   0x08002d28   0x0000002c   Code   RO          638    .text._println      at.o
+    0x08002d54   0x08002d54   0x00000018   Code   RO          608    .text._sendInfor    at.o
+    0x08002d6c   0x08002d6c   0x00000012   Code   RO          626    .text._setInputDevice  at.o
+    0x08002d7e   0x08002d7e   0x00000002   PAD
+    0x08002d80   0x08002d80   0x00000012   Code   RO          628    .text._setOutputDevice  at.o
+    0x08002d92   0x08002d92   0x00000002   PAD
+    0x08002d94   0x08002d94   0x00000008   Code   RO          654    .text.at_free       at_mem.o
+    0x08002d9c   0x08002d9c   0x00000008   Code   RO          652    .text.at_malloc     at_mem.o
+    0x08002da4   0x08002da4   0x00000004   Code   RO          658    .text.at_memcmp     at_mem.o
+    0x08002da8   0x08002da8   0x0000000c   Code   RO          660    .text.at_memcpy     at_mem.o
+    0x08002db4   0x08002db4   0x0000000e   Code   RO          656    .text.at_memset     at_mem.o
+    0x08002dc2   0x08002dc2   0x00000002   PAD
+    0x08002dc4   0x08002dc4   0x00000066   Code   RO           17    .text.at_user_init  at_user.o
+    0x08002e2a   0x08002e2a   0x00000002   PAD
+    0x08002e2c   0x08002e2c   0x00000028   Code   RO           60    .text.fputc         usart.o
+    0x08002e54   0x08002e54   0x000000ec   Code   RO           35    .text.main          main.o
+    0x08002f40   0x08002f40   0x0000002a   Code   RO          682    .text.my_mem_init   malloc.o
+    0x08002f6a   0x08002f6a   0x00000002   PAD
+    0x08002f6c   0x08002f6c   0x000000bc   Code   RO          684    .text.my_mem_perused  malloc.o
+    0x08003028   0x08003028   0x00000048   Code   RO          696    .text.myfree        malloc.o
+    0x08003070   0x08003070   0x0000026c   Code   RO          698    .text.mymalloc      malloc.o
+    0x080032dc   0x080032dc   0x0000005a   Code   RO          686    .text.mymemcmp      malloc.o
+    0x08003336   0x08003336   0x00000002   PAD
+    0x08003338   0x08003338   0x00000072   Code   RO          688    .text.mymemcpy      malloc.o
+    0x080033aa   0x080033aa   0x00000002   PAD
+    0x080033ac   0x080033ac   0x00000014   Code   RO          690    .text.mymemset      malloc.o
+    0x080033c0   0x080033c0   0x0000000e   Code   RO          795    i._is_digit         c_w.l(__printf_wp.o)
+    0x080033ce   0x080033ce   0x00000002   PAD
+    0x080033d0   0x080033d0   0x0000002c   Code   RO          885    locale$$code        c_w.l(lc_ctype_c.o)
+    0x080033fc   0x080033fc   0x00000008   Data   RO          754    .constdata          c_w.l(_printf_wctomb.o)
+    0x08003404   0x08003404   0x00000028   Data   RO          783    .constdata          c_w.l(_printf_hex_int_ll_ptr.o)
+    0x0800342c   0x0800342c   0x00000011   Data   RO          803    .constdata          c_w.l(__printf_flags_ss_wp.o)
+    0x0800343d   0x0800343d   0x00000010   Data   RO          596    .rodata.AHBPrescTable  system_stm32f1xx.o
+    0x0800344d   0x0800344d   0x00000008   Data   RO          597    .rodata.APBPrescTable  system_stm32f1xx.o
+    0x08003455   0x08003455   0x00000002   Data   RO          347    .rodata.HAL_RCC_GetSysClockFreq.aPredivFactorTable  stm32f1xx_hal_rcc.o
+    0x08003457   0x08003457   0x00000010   Data   RO          346    .rodata.cst16       stm32f1xx_hal_rcc.o
+    0x08003467   0x08003467   0x0000000c   Data   RO           25    .rodata.str1.1      at_user.o
+    0x08003473   0x08003473   0x00000020   Data   RO          642    .rodata.str1.1      at.o
+    0x08003493   0x08003493   0x00000001   PAD
+    0x08003494   0x08003494   0x00000020   Data   RO         1020    Region$$Table       anon$$obj.o
+    0x080034b4   0x080034b4   0x00000110   Data   RO          884    locale$$data        c_w.l(lc_ctype_c.o)
 
 
     Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x080035e0, Size: 0x000011c8, Max: 0x00005000, ABSOLUTE)
@@ -2301,7 +2301,7 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
 
-      2178        226         32          0         50      14887   at.o
+      2174        226         32          0         50      14887   at.o
         46          0          0          0          0       1833   at_mem.o
         82          0          0          0          0       2472   at_stream_device.o
        256          4         12         36        204       4479   at_user.o
@@ -2321,7 +2321,7 @@ Image component sizes
        492          0          0          0        368       7268   usart.o
 
     ----------------------------------------------------------------------
-     10092        362        355         68       4384     121780   Object Totals
+     10088        362        355         68       4384     121780   Object Totals
          0          0         32          0          0          0   (incl. Generated)
        100          0          1          0         46          0   (incl. Padding)
 
@@ -2426,15 +2426,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     13076        474        692         72       4480     123032   Grand Totals
-     13076        474        692         72       4480     123032   ELF Image Totals
-     13076        474        692         72          0          0   ROM Totals
+     13072        474        692         72       4480     123032   Grand Totals
+     13072        474        692         72       4480     123032   ELF Image Totals
+     13072        474        692         72          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                13768 (  13.45kB)
+    Total RO  Size (Code + RO Data)                13764 (  13.44kB)
     Total RW  Size (RW Data + ZI Data)              4552 (   4.45kB)
-    Total ROM Size (Code + RO Data + RW Data)      13840 (  13.52kB)
+    Total ROM Size (Code + RO Data + RW Data)      13836 (  13.51kB)
 
 ==============================================================================
 
