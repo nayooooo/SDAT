@@ -27,4 +27,8 @@ stm32f103c8-usart-at-mdk/main.o: ..\Core\Src\main.c ..\Core\Inc\main.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_pwr.h \
   ..\Drivers\STM32F1xx_HAL_Driver\Inc\stm32f1xx_hal_uart.h \
   ..\Core\Inc\usart.h ..\Core\Inc\gpio.h \
-  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h
+  D:\Keil_v5\ARM\ARMCLANG\Bin\..\include\stdio.h ..\Core\Inc\at_user.h \
+  ..\Middlewares\Third_Party\At\include\at.h \
+  ..\Middlewares\Third_Party\At\include\at_type.h \
+  ..\Middlewares\Third_Party\At\include\at_mem.h \
+  ..\Middlewares\Third_Party\At\include\at_stream_device.h

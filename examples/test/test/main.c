@@ -8,12 +8,12 @@ size_t rx_front = 0;
 size_t rx_rear = 0;
 static uint8_t rx_buff[256] = { 0 };
 
-static size_t _print(Stream* this, const char* message)
+static int _print(Stream* this, const char* message)
 {
     return printf("%s", message);
 }
 
-static size_t _available(Stream* this)
+static int _available(Stream* this)
 {
     size_t len = (rx_rear - rx_front + 256) % 256;
     return len;

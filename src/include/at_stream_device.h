@@ -4,8 +4,8 @@
 #include "at_type.h"
 
 typedef struct At_Stream_Device Stream;
-typedef size_t (*Stream_Print)(Stream* this, const char* message);
-typedef size_t (*Stream_Available)(Stream* this);
+typedef int (*Stream_Print)(Stream* this, const char* message);
+typedef int (*Stream_Available)(Stream* this);
 typedef int (*Stream_Read)(Stream* this);
 struct At_Stream_Device{
     Stream_Print print;

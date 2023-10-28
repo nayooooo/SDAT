@@ -26,6 +26,8 @@
 
 #include <stdio.h>
 
+#include <at_user.h>
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/

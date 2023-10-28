@@ -232,13 +232,13 @@ At_Err_t _handleAuto(struct At* this)
 	return AT_ERROR_INPUT;
 }
 
-static size_t _at_printf(struct At* this, const char* format, ...)
+static int _at_printf(struct At* this, const char* format, ...)
 {
 	va_list arg;
 	va_start(arg, format);
 	char temp[64] = { 0 };
 	char *buffer = temp;
-	size_t len = _vsnprintf(temp, sizeof(temp), format, arg);
+	int len = _vsnprintf(temp, sizeof(temp), format, arg);
 	va_end(arg);
 	if (len > sizeof(temp) - 1) {
         buffer = at_malloc((len + 1) * sizeof(char));
@@ -257,22 +257,24 @@ static size_t _at_printf(struct At* this, const char* format, ...)
 	return len;
 }
 
-static size_t _print(struct At* this, const char* message)
+static int _print(struct At* this, const char* message)
 {
-    if (this == nullptr) return 0;
-    if (this->_output_dev == nullptr) return 0;
+    if (this == nullptr) return -1;
+    if (this->_output_dev == nullptr) return -2;
     return this->_output_dev->print(this->_output_dev, message);
 }
 
-size_t _println(struct At* this, const char* message)
+static int _println(struct At* this, const char* message)
 {
     if (this == nullptr) return AT_ERROR;
-    size_t len = this->print(this, message);
-    len += this->print(this, "\r\n");
-    return len;
+    int len = this->print(this, message);
+    if (len < 0) return len;
+    int len2 = this->print(this, "\r\n");
+    if (len2 < 0) return len2;
+    return len + len2;
 }
 
-At_Err_t _printSet(struct At* this, const char* name)
+static At_Err_t _printSet(struct At* this, const char* name)
 {
     this->println(this, "");
     if (at_memcmp(name, "", 1)) {
