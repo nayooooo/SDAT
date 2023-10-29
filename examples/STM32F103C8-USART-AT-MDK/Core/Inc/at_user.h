@@ -5,6 +5,8 @@
 
 #define AT_USER_OK "OK"
 #define AT_USER_ERROR_ARGC "error by argc"
+#define AT_USER_ERROR_ARGV "error by argv"
+#define AT_USER_ERROR_MALLOC "error by malloc"
 #define AT_USER_ERROR_TIMEOUT "error by timeout"
 #define AT_USER_ERROR_NOTFIND "error by not found"
 #define AT_USER_ERROR_FUNCTION "error by function"

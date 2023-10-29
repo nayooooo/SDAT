@@ -26,6 +26,8 @@ static At_Err_t _paramClear(At_Param_t param)
         }
     }
     size_t arg_num = sizeof(param->argv) / sizeof(char*);
+	// 保留数组越界错误代码，以作警示
+//    for (size_t i = param->argc + 1; i <= arg_num; i++) {
     for (size_t i = param->argc + 1; i < arg_num; i++) {
         param->argv[i] = nullptr;
     }
@@ -221,7 +223,7 @@ At_Err_t _handleAuto(struct At* this)
 			return AT_EOK;
 		} else if ((char)in == this->_terminator) {
 			At_Err_t err = this->handle(this, this->_readString);
-            at_memset(this->_readString, 0, this->_readString_len);
+            at_memset((void*)(this->_readString), 0, this->_readString_len);
             this->_readString_used = 0;
 			return err;
 		}
@@ -230,7 +232,7 @@ At_Err_t _handleAuto(struct At* this)
 	return AT_ERROR_INPUT;
 }
 
-static int _printf(struct At* this, const char* format, ...)
+static int _at_printf(struct At* this, const char* format, ...)
 {
 	va_list arg;
 	va_start(arg, format);
@@ -327,7 +329,7 @@ static At_Err_t _At_Config_no_readString(
     this->handle = _handle;
     this->handleAuto = _handleAuto;
 
-    this->printf = _printf;
+    this->printf = _at_printf;
     this->print = _print;
     this->println = _println;
     this->printSet = _printSet;
@@ -339,7 +341,7 @@ static At_Err_t _At_Config_no_readString(
 static At_Err_t _At_Create(
     At* this,
     const At_State_t atTable, Stream* input_dev, Stream* output_dev,
-    size_t param_max_num, char terminator, size_t readString_len
+    size_t readString_len, size_t param_max_num, char terminator
 )
 {
     if (readString_len <= 3) return AT_ERROR;  // AT+
@@ -362,23 +364,23 @@ At_Err_t At_Create(
 )
 {
     if (argc == 0) {
-        return _At_Create(this, atTable, input_dev, output_dev, AT_PARAM_MAX_NUM, AT_TERMINATOR_DEFAULT, AT_READSTRING_LEN_DEFAULT);
+        return _At_Create(this, atTable, input_dev, output_dev, AT_READSTRING_LEN_DEFAULT, AT_PARAM_MAX_NUM, AT_TERMINATOR_DEFAULT);
     } else if (argc > 3) return AT_ERROR;
     va_list args;
     va_start(args, argc);
     size_t temp = argc;
-    size_t param_max_num; char terminator; size_t readString_len;
-    param_max_num = va_arg(args, size_t); if (--temp) {
-        va_end(args);
-        return _At_Create(this, atTable, input_dev, output_dev, param_max_num, AT_TERMINATOR_DEFAULT, AT_READSTRING_LEN_DEFAULT);
-    }
-    terminator = va_arg(args, char); if (--temp) {  // dangerous at "va_arg(args, char)", the "char"
-        va_end(args);
-        return _At_Create(this, atTable, input_dev, output_dev, param_max_num, terminator, AT_READSTRING_LEN_DEFAULT);
-    }
+    size_t readString_len; size_t param_max_num; char terminator;
     readString_len = va_arg(args, size_t); if (--temp) {
         va_end(args);
-        return _At_Create(this, atTable, input_dev, output_dev, param_max_num, terminator, readString_len);
+        return _At_Create(this, atTable, input_dev, output_dev, readString_len, AT_PARAM_MAX_NUM, AT_TERMINATOR_DEFAULT);
+    }
+    param_max_num = va_arg(args, size_t); if (--temp) {
+        va_end(args);
+        return _At_Create(this, atTable, input_dev, output_dev, readString_len, param_max_num, AT_TERMINATOR_DEFAULT);
+    }
+    terminator = va_arg(args, int); if (--temp) {  // dangerous at "va_arg(args, char)", the "char"
+        va_end(args);
+        return _At_Create(this, atTable, input_dev, output_dev, readString_len, param_max_num, terminator);
     }
     va_end(args);
 
@@ -388,10 +390,10 @@ At_Err_t At_Create(
 At_Err_t At_Create_s(
     At* this,
     const At_State_t atTable, Stream* input_dev, Stream* output_dev,
-    size_t param_max_num, char terminator, size_t readString_len
+    size_t readString_len, size_t param_max_num, char terminator
 )
 {
-    return _At_Create(this, atTable, input_dev, output_dev, param_max_num, terminator, readString_len);
+    return _At_Create(this, atTable, input_dev, output_dev, readString_len, param_max_num, terminator);
 }
 
 At_Err_t At_Delete(At* this)
@@ -409,7 +411,7 @@ At_Err_t At_Delete(At* this)
 static At_Err_t _At_Init(
     At* this,
     const At_State_t atTable, Stream* input_dev, Stream* output_dev,
-    size_t param_max_num, char terminator, char* readString, size_t readString_len
+    char* readString, size_t readString_len, size_t param_max_num, char terminator
 )
 {
     if (readString == nullptr) return AT_ERROR;
@@ -432,7 +434,7 @@ At_Err_t At_Init(
 )
 {
     if (argc == 0) {
-        return _At_Init(this, atTable, input_dev, output_dev, AT_PARAM_MAX_NUM, AT_TERMINATOR_DEFAULT, readString, readString_len);
+        return _At_Init(this, atTable, input_dev, output_dev, readString, readString_len, AT_PARAM_MAX_NUM, AT_TERMINATOR_DEFAULT);
     } else if (argc > 2) return AT_ERROR;
     va_list args;
     va_start(args, argc);
@@ -440,11 +442,11 @@ At_Err_t At_Init(
     size_t param_max_num; char terminator;
     param_max_num = va_arg(args, size_t); if (--temp) {
         va_end(args);
-        return _At_Init(this, atTable, input_dev, output_dev, param_max_num, AT_TERMINATOR_DEFAULT, readString, readString_len);
+        return _At_Init(this, atTable, input_dev, output_dev, readString, readString_len, param_max_num, AT_TERMINATOR_DEFAULT);
     }
-    terminator = va_arg(args, char); if (--temp) {  // dangerous at "va_arg(args, char)", the "char"
+    terminator = va_arg(args, int); if (--temp) {  // dangerous at "va_arg(args, char)", the "char"
         va_end(args);
-        return _At_Init(this, atTable, input_dev, output_dev, param_max_num, terminator, readString, readString_len);
+        return _At_Init(this, atTable, input_dev, output_dev, readString, readString_len, param_max_num, terminator);
     }
     va_end(args);
 

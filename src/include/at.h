@@ -37,7 +37,6 @@ struct At{
     size_t _param_max_num;
     char _terminator;
     char* _readString;
-    int _readStringType;
     size_t _readString_len;
     size_t _readString_used;
 };
@@ -54,7 +53,7 @@ At_Err_t At_Create(
 At_Err_t At_Create_s(
     At* this,
     const At_State_t atTable, Stream* input_dev, Stream* output_dev,
-    size_t param_max_num, char terminator, size_t readString_len
+    size_t readString_len, size_t param_max_num, char terminator
 );
 
 At_Err_t At_Init(
