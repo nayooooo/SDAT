@@ -1,6 +1,6 @@
 # SDAT(Stream Device AT set of C)
 
-详细使用方法和同作者仓库[StreamDeviceAT]([https://github.com/nayooooo/arduino-at.git](https://github.com/nayooooo/StreamDeviceAT.git))下的README文档类似。
+详细使用方法和同作者仓库[StreamDeviceAT](https://github.com/nayooooo/StreamDeviceAT.git)下的README文档类似。
 
 # 资源使用
 
